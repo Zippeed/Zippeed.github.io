@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zipped's Personal Profile - Gamer & Nerd">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+</head>
+
+<body>
+    <div class="galaxy-bg"></div>
+    <div class="galaxy-overlay"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="language-toggle">
+                <div class="language-menu">
+                    <button onclick="toggleLanguageMenu()" class="lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="index.html">Português</a>
+                        <a href="index-en.html" class="active">English</a>
+                        <a href="index-ja.html">日本語</a>
+                        <a href="index-es.html">Español</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-pic">
+                <img src="img/perfil.png" alt="Profile picture" style="width: 100%; height: 100%; border-radius: 50%;">
+            </div>
+            <h1 class="name">Zipped</h1>
+            <p class="bio">Gamer & Nerd</p>
+        </header>
+
+        <div class="sections">
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-user"></i></span>About Me</h2>
+                <div class="about-me">
+                    <div class="about-me-main">
+                        <div class="about-me-intro">
+                            <p>Hi! I'm Zipped, I love technology and games. I enjoy talking about anything, currently I'm studying, working and playing very little but if you want to play with me just call me.</p>
+                        </div>
+                        <div class="about-me-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Location</span>
+                                    <span class="stat-value">Brazil</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-birthday-cake"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Age</span>
+                                    <span class="stat-value">20 years</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-venus-mars"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Gender</span>
+                                    <span class="stat-value">Gender Fluid</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-heart"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Sexuality</span>
+                                    <span class="stat-value">Pansexual</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-me-languages">
+                        <h3><i class="fas fa-language"></i> Languages</h3>
+                        <div class="language-cards">
+                            <div class="language-card">
+                                <span class="language-name">Portuguese</span>
+                                <span class="language-level">Native</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="language-card">
+                                <span class="language-name">English</span>
+                                <span class="language-level">Intermediate</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="language-card">
+                                <span class="language-name">Spanish</span>
+                                <span class="language-level">Beginner</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-globe"></i></span>Social Media</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-discord"></i>
+                        <span data-label="Discord: " data-username=".zipped"></span>
+                    </a>
+                    <a href="https://www.twitch.tv/zippedsz" target="_blank" class="social-link">
+                        <i class="fab fa-twitch"></i>
+                        <span data-label="Twitch: " data-username="Zippedsz"></span>
+                    </a>
+                    <a href="https://x.com/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-x-twitter"></i>
+                        <span data-label="Twitter/X: " data-username="zippeed"></span>
+                    </a>
+                    <a href="https://www.instagram.com/zippedsz/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span data-label="Instagram: " data-username="zippedsz"></span>
+                    </a>
+                    <a href="https://github.com/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span data-label="GitHub: " data-username="zippeed"></span>
+                    </a>
+                    <a href="https://steamcommunity.com/id/ShadowZipped/" target="_blank" class="social-link">
+                        <i class="fab fa-steam"></i>
+                        <span data-label="Steam: " data-username="♥ Zipped"></span>
+                    </a>
+                    <a href="https://www.last.fm/pt/user/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-lastfm"></i>
+                        <span data-label="Last.fm: " data-username="Zippeed"></span>
+                    </a>
+                    <a href="https://letterboxd.com/Zippeed/" target="_blank" class="social-link">
+                        <i class="fas fa-film"></i>
+                        <span data-label="Letterboxd: " data-username="Zippeed"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-music"></i></span>Favorite Playlist</h2>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4qgbAHN8xzuBdxswRinFuB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5v25aEyBXI7UvsfY8ceWd6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-music"></i></span>Favorite Songs</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/LetDown.jpg" alt="OK Computer Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Let Down</div>
+                            <div class="favorite-subtitle">Radiohead - OK Computer (1997)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/GlimpseOfUs.jpg" alt="Smithereens Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Glimpse of Us</div>
+                            <div class="favorite-subtitle">Joji - Smithereens (2022)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/DieForYou.jpg" alt="Smithereens Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Die For You</div>
+                            <div class="favorite-subtitle">Joji - Smithereens (2022)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-film"></i></span>Favorite Movies</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/Interstellar.jpg" alt="Interstellar">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Interstellar</div>
+                            <div class="favorite-subtitle">Sci-Fi - Christopher Nolan</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/Inception.jpg" alt="Inception">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Inception</div>
+                            <div class="favorite-subtitle">Sci-Fi - Christopher Nolan</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/YourName.jpg" alt="Your Name">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Your Name</div>
+                            <div class="favorite-subtitle">Animation - Makoto Shinkai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-tv"></i></span>Favorite Animes</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/SteinsGate.jpg" alt="Steins;Gate">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Steins;Gate</div>
+                            <div class="favorite-subtitle">Sci-Fi - White Fox</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/DeathNote.jpg" alt="Death Note">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Death Note</div>
+                            <div class="favorite-subtitle">Thriller - Madhouse</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/CodeGeass.jpg" alt="Code Geass">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Code Geass</div>
+                            <div class="favorite-subtitle">Mecha - Sunrise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-tv"></i></span>Favorite Series</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/BreakingBad.jpg" alt="Breaking Bad">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Breaking Bad</div>
+                            <div class="favorite-subtitle">Drama - Vince Gilligan</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/HelluvaBoss.jpg" alt="Helluva Boss">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Helluva Boss</div>
+                            <div class="favorite-subtitle">Adult Animation</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/HazbinHotel.jpg" alt="Hazbin Hotel">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Hazbin Hotel</div>
+                            <div class="favorite-subtitle">Adult Animation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-gamepad"></i></span>Favorite Games</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/Portal2.jpg" alt="Portal 2">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Portal 2</div>
+                            <div class="favorite-subtitle">Valve</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/Undertale.jpg" alt="Undertale">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Undertale</div>
+                            <div class="favorite-subtitle">Toby Fox</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/Omori.jpg" alt="OMORI">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">OMORI</div>
+                            <div class="favorite-subtitle">OMOCAT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-user"></i></span>Favorite Characters</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/Okabe.jpg" alt="Okabe Rintarou">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Okabe Rintarou</div>
+                            <div class="favorite-subtitle">Steins;Gate</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/L.jpg" alt="L">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">L</div>
+                            <div class="favorite-subtitle">Death Note</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/Lelouch.jpg" alt="Lelouch">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Lelouch</div>
+                            <div class="favorite-subtitle">Code Geass</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-book"></i></span>Favorite Mangas</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/mangas/SteinsGate.jpg" alt="Steins;Gate">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Steins;Gate</div>
+                            <div class="favorite-subtitle">Sci-Fi - Chiyomaru Shikura</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/mangas/DeathNote.jpg" alt="Death Note">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Death Note</div>
+                            <div class="favorite-subtitle">Thriller - Tsugumi Ohba</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/mangas/CodeGeass.jpg" alt="Code Geass">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Code Geass</div>
+                            <div class="favorite-subtitle">Mecha - Goro Taniguchi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-book"></i></span>Favorite Manhwas</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwas/SoloLeveling.jpg" alt="Solo Leveling">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Solo Leveling</div>
+                            <div class="favorite-subtitle">Action - Chugong</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwas/TowerOfGod.jpg" alt="Tower of God">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Tower of God</div>
+                            <div class="favorite-subtitle">Fantasy - SIU</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwas/Omniscient.jpg" alt="Omniscient Reader's Viewpoint">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Omniscient Reader's Viewpoint</div>
+                            <div class="favorite-subtitle">Fantasy - Sing Shong</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-lightbulb"></i></span>Curiosities</h2>
+                <div class="curiosities-grid">
+                    <div class="curiosity-item">
+                        <i class="fas fa-music"></i>
+                        <h3>Music</h3>
+                        <ul>
+                            <li>I love listening to music while studying</li>
+                            <li>My favorite genre is Lo-Fi</li>
+                            <li>I have a playlist for every mood</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Games</h3>
+                        <ul>
+                            <li>I love puzzle games</li>
+                            <li>My favorite game is Portal 2</li>
+                            <li>I play mostly on PC</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-film"></i>
+                        <h3>Movies & Series</h3>
+                        <ul>
+                            <li>I love sci-fi movies</li>
+                            <li>My favorite movie is Interstellar</li>
+                            <li>I watch a lot of anime</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-book"></i>
+                        <h3>Books & Comics</h3>
+                        <ul>
+                            <li>I love reading manga</li>
+                            <li>My favorite manga is Steins;Gate</li>
+                            <li>I read a lot of manhwa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-images"></i></span>Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img/gallery/1.jpg" alt="Gallery Image 1" class="gallery-image">
+                        <div class="gallery-title">My Setup</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/gallery/2.jpg" alt="Gallery Image 2" class="gallery-image">
+                        <div class="gallery-title">My Room</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/gallery/3.jpg" alt="Gallery Image 3" class="gallery-image">
+                        <div class="gallery-title">My Desk</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/gallery/4.jpg" alt="Gallery Image 4" class="gallery-image">
+                        <div class="gallery-title">My Collection</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html> 
