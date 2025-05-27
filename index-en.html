@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zipped's Personal Profile - Gamer & Otaku">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+</head>
+
+<body>
+    <div class="galaxy-bg"></div>
+    <div class="galaxy-overlay"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="language-toggle">
+                <div class="language-menu">
+                    <button onclick="toggleLanguageMenu()" class="lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="index.html">Português</a>
+                        <a href="index-en.html" class="active">English</a>
+                        <a href="index-ja.html">日本語</a>
+                        <a href="index-es.html">Español</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-pic">
+                <img src="img/perfil.png" alt="Profile Picture" style="width: 100%; height: 100%; border-radius: 50%;">
+            </div>
+            <h1 class="name">Zipped</h1>
+            <p class="bio">Gamer & Otaku</p>
+        </header>
+
+        <div class="sections">
+            <!-- Sobre Mim e Redes Sociais -->
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-user"></i></span>About Me</h2>
+                <div class="about-me">
+                    <div class="about-me-main">
+                        <div class="about-me-intro">
+                            <p>Hi! I'm Zipped. I love technology and games. I like talking about anything, currently I'm studying and working, so I don't play much, but if you want to play together, let me know!</p>
+                        </div>
+                        <div class="about-me-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Location</span>
+                                    <span class="stat-value">Brazil</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-birthday-cake"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Age</span>
+                                    <span class="stat-value">20 years</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-venus-mars"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Gender</span>
+                                    <span class="stat-value">Gender Fluid</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-heart"></i>
+                                <div class="stat-info">
+                                    <span class="stat-label">Sexual Orientation</span>
+                                    <span class="stat-value">Pansexual</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-me-languages">
+                        <h3><i class="fas fa-language"></i> Languages</h3>
+                        <div class="language-cards">
+                            <div class="language-card">
+                                <span class="language-name">Portuguese</span>
+                                <span class="language-level">Native</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="language-card">
+                                <span class="language-name">English</span>
+                                <span class="language-level">Intermediate</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="language-card">
+                                <span class="language-name">Spanish</span>
+                                <span class="language-level">Beginner</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-globe"></i></span>Social Media</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-discord"></i>
+                        <span data-label="Discord: " data-username=".zipped"></span>
+                    </a>
+                    <a href="https://www.twitch.tv/zippedsz" target="_blank" class="social-link">
+                        <i class="fab fa-twitch"></i>
+                        <span data-label="Twitch: " data-username="Zippedsz"></span>
+                    </a>
+                    <a href="https://x.com/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-x-twitter"></i>
+                        <span data-label="Twitter/X: " data-username="zippeed"></span>
+                    </a>
+                    <a href="https://www.instagram.com/zippedsz/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span data-label="Instagram: " data-username="zippedsz"></span>
+                    </a>
+                    <a href="https://github.com/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span data-label="GitHub: " data-username="zippeed"></span>
+                    </a>
+                    <a href="https://steamcommunity.com/id/ShadowZipped/" target="_blank" class="social-link">
+                        <i class="fab fa-steam"></i>
+                        <span data-label="Steam: " data-username="♥ Zipped"></span>
+                    </a>
+                    <a href="https://www.last.fm/pt/user/Zippeed" target="_blank" class="social-link">
+                        <i class="fab fa-lastfm"></i>
+                        <span data-label="Last.fm: " data-username="Zippeed"></span>
+                    </a>
+                    <a href="https://letterboxd.com/Zippeed/" target="_blank" class="social-link">
+                        <i class="fas fa-film"></i>
+                        <span data-label="Letterboxd: " data-username="Zippeed"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Playlists -->
+            <div class="section" style="grid-column: 1 / -1;">
+                <h2><span class="section-icon"><i class="fas fa-music"></i></span>Favorite Playlists</h2>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4qgbAHN8xzuBdxswRinFuB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5v25aEyBXI7UvsfY8ceWd6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <!-- Músicas Favoritas -->
+            <div class="section" style="grid-column: 1 / -1;">
+                <h2><span class="section-icon"><i class="fas fa-music"></i></span>Favorite Songs</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/LetDown.jpg" alt="OK Computer Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Let Down</div>
+                            <div class="favorite-subtitle">Radiohead - OK Computer (1997)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/GlimpseOfUs.jpg" alt="Smithereens Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Glimpse of Us</div>
+                            <div class="favorite-subtitle">Joji - Smithereens (2022)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/DieForYou.jpg" alt="Smithereens Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Die For You</div>
+                            <div class="favorite-subtitle">Joji - Smithereens (2022)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/Teenagers.jpg" alt="The Black Parade Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Teenagers</div>
+                            <div class="favorite-subtitle">My Chemical Romance - The Black Parade (2006)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/Gunslinger.jpg" alt="Avenged Sevenfold Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Gunslinger</div>
+                            <div class="favorite-subtitle">Avenged Sevenfold - Avenged Sevenfold (2007)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">6</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/FakePlasticTrees.jpg" alt="The Bends Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Fake Plastic Trees</div>
+                            <div class="favorite-subtitle">Radiohead - The Bends (1995)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">7</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/Reflection.jpg" alt="Reflection Single Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Reflection</div>
+                            <div class="favorite-subtitle">The Neighbourhood (2018)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">8</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/SlowDancing.jpg" alt="BALLADS 1 Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Slow Dancing in the Dark</div>
+                            <div class="favorite-subtitle">Joji - BALLADS 1 (2018)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">9</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/FallingDown.jpg" alt="Falling Down Single Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Falling Down</div>
+                            <div class="favorite-subtitle">Lil Peep & XXXTENTACION (2018)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">10</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/Duvet.jpg" alt="Serial Experiments Lain OST Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Duvet</div>
+                            <div class="favorite-subtitle">bôa - Serial Experiments Lain OST (1998)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">11</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/NeverFadeAway.jpg" alt="Cyberpunk 2077 OST Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Never Fade Away</div>
+                            <div class="favorite-subtitle">Refused - Cyberpunk 2077 OST (2020)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">12</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/LoserBaby.jpg" alt="Hazbin Hotel OST Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Loser, Baby</div>
+                            <div class="favorite-subtitle">Hazbin Hotel OST (2024)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">13</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/HailToTheKing.jpg" alt="Hail to the King Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Hail to the King</div>
+                            <div class="favorite-subtitle">Avenged Sevenfold - Hail to the King (2013)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">14</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/Poison.jpg" alt="Hazbin Hotel OST Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Poison</div>
+                            <div class="favorite-subtitle">Hazbin Hotel OST (2024)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">15</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/SoFarAway.jpg" alt="Nightmare Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">So Far Away</div>
+                            <div class="favorite-subtitle">Avenged Sevenfold - Nightmare (2010)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="favorite-rank">16</div>
+                        <div class="favorite-cover">
+                            <img src="img/albums/NoSurprises.jpg" alt="OK Computer Album Cover">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">No Surprises</div>
+                            <div class="favorite-subtitle">Radiohead - OK Computer (1997)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filmes e Animes -->
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-film"></i></span>Favorite Movies</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/eternal-sunshine.jpg" alt="Eternal Sunshine of the Spotless Mind">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Eternal Sunshine of the Spotless Mind</div>
+                            <div class="favorite-subtitle">Michel Gondry (2004)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/la-la-land.jpg" alt="La La Land">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">La La Land</div>
+                            <div class="favorite-subtitle">Damien Chazelle (2016)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/batman.jpg" alt="The Batman">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">The Batman</div>
+                            <div class="favorite-subtitle">Matt Reeves (2022)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/wild-robot.jpg" alt="The Wild Robot">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">The Wild Robot</div>
+                            <div class="favorite-subtitle">Chris Sanders (2024)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/look-back.jpg" alt="Look Back">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Look Back</div>
+                            <div class="favorite-subtitle">Kiyotaka Oshiyama (2024)</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item movie">
+                        <div class="favorite-rank">6</div>
+                        <div class="favorite-cover">
+                            <img src="img/movies/blade-runner2049.jpg" alt="Blade Runner 2049">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Blade Runner 2049</div>
+                            <div class="favorite-subtitle">Denis Villeneuve (2017)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-tv"></i></span>Favorite Animes</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/cowboy-bebop.jpg" alt="Cowboy Bebop">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Cowboy Bebop</div>
+                            <div class="favorite-subtitle">Shinichirō Watanabe</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/monster.jpg" alt="Monster">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Monster</div>
+                            <div class="favorite-subtitle">Naoki Urasawa</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/jojo.jpg" alt="Jojo's Bizarre Adventure">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Jojo's Bizarre Adventure</div>
+                            <div class="favorite-subtitle">Hirohiko Araki</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/edgerunners.jpg" alt="Cyberpunk: Edgerunners">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Cyberpunk: Edgerunners</div>
+                            <div class="favorite-subtitle">Studio Trigger</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item anime">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/animes/beastars.jpg" alt="Beastars">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Beastars</div>
+                            <div class="favorite-subtitle">Paru Itagaki</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jogos e Personagens -->
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-gamepad"></i></span>Favorite Games</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/life-is-strange.jpg" alt="Life is Strange">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Life is Strange</div>
+                            <div class="favorite-subtitle">Narrative Adventure - Dontnod Entertainment</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/nier-automata.jpg" alt="Nier Automata">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Nier Automata</div>
+                            <div class="favorite-subtitle">Action RPG - PlatinumGames</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/oneshot.jpg" alt="OneShot">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">OneShot</div>
+                            <div class="favorite-subtitle">Puzzle - Future Cat</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/cyberpunk.jpg" alt="Cyberpunk 2077">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Cyberpunk 2077</div>
+                            <div class="favorite-subtitle">RPG - CD Projekt Red</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item game">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/games/outer-wilds.jpg" alt="Outer Wilds">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Outer Wilds</div>
+                            <div class="favorite-subtitle">Adventure - Mobius Digital</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-user-circle"></i></span>Favorite Characters</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/kaneki.jpg" alt="Kaneki">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Kaneki</div>
+                            <div class="favorite-subtitle">Tokyo Ghoul</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/dazai.jpg" alt="Osamu Dazai">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Osamu Dazai</div>
+                            <div class="favorite-subtitle">Bungou Stray Dogs</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/shadow.jpg" alt="Shadow">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Shadow</div>
+                            <div class="favorite-subtitle">Sonic</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/moxxie.jpg" alt="Moxxie">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Moxxie</div>
+                            <div class="favorite-subtitle">Helluva Boss</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item character">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/characters/morte.jpg" alt="Death">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Death</div>
+                            <div class="favorite-subtitle">Sandman</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Séries e Mangás -->
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-tv"></i></span>Favorite Series</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/helluva-boss.jpg" alt="Helluva Boss">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Helluva Boss</div>
+                            <div class="favorite-subtitle">Adult Animation</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/hazbin-hotel.jpg" alt="Hazbin Hotel">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Hazbin Hotel</div>
+                            <div class="favorite-subtitle">Adult Animation</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/arcane.jpg" alt="Arcane">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Arcane</div>
+                            <div class="favorite-subtitle">Animation - Riot Games</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/rick-morty.jpg" alt="Rick and Morty">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Rick and Morty</div>
+                            <div class="favorite-subtitle">Adult Animation - Adult Swim</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item series">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/series/smiling-friends.jpg" alt="Smiling Friends">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Smiling Friends</div>
+                            <div class="favorite-subtitle">Adult Animation - Adult Swim</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-book-open"></i></span>Favorite Mangas</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/manga/tokyo-ghoul.jpg" alt="Tokyo Ghoul">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Tokyo Ghoul</div>
+                            <div class="favorite-subtitle">Sui Ishida</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/manga/punpun.jpg" alt="Oyasumi Punpun">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Oyasumi Punpun</div>
+                            <div class="favorite-subtitle">Inio Asano</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/manga/fire-force.jpg" alt="Fire Force">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Fire Force</div>
+                            <div class="favorite-subtitle">Atsushi Ohkubo</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/manga/bsd.jpg" alt="Bungou Stray Dogs">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Bungou Stray Dogs</div>
+                            <div class="favorite-subtitle">Kafka Asagiri</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manga">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/manga/soul-eater.jpg" alt="Soul Eater">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Soul Eater</div>
+                            <div class="favorite-subtitle">Atsushi Ohkubo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manhwas e Curiosidades -->
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-book-open"></i></span>Favorite Manhwas</h2>
+                <div class="favorites-list">
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">1</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwa/orv.jpg" alt="Omniscient Reader's Viewpoint">
+                        </div>
+                        <div class="favorite-content" style="flex-grow: 1; white-space: normal;">
+                            <div class="favorite-title">Omniscient Reader's Viewpoint</div>
+                            <div class="favorite-subtitle">Sing Shong</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">2</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwa/tbate.jpg" alt="The Beginning After The End">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">The Beginning After The End</div>
+                            <div class="favorite-subtitle">TurtleMe</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">3</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwa/tog.jpg" alt="Tower of God">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Tower of God</div>
+                            <div class="favorite-subtitle">SIU</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">4</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwa/solo-leveling.jpg" alt="Solo Leveling">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Solo Leveling</div>
+                            <div class="favorite-subtitle">Chugong</div>
+                        </div>
+                    </div>
+                    <div class="favorite-item manhwa">
+                        <div class="favorite-rank">5</div>
+                        <div class="favorite-cover">
+                            <img src="img/manhwa/eleceed.jpg" alt="Eleceed">
+                        </div>
+                        <div class="favorite-content">
+                            <div class="favorite-title">Eleceed</div>
+                            <div class="favorite-subtitle">Son Jae-Ho</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon"><i class="fas fa-lightbulb"></i></span>Curiosities</h2>
+                <div class="curiosities-grid">
+                    <div class="curiosity-item">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Gaming</h3>
+                        <ul>
+                            <li>Over 10,000 hours playing Counter-Strike and Fortnite each</li>
+                            <li>My first console was PlayStation 2</li>
+                            <li>I like games with deep stories and emotional appeal</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-music"></i>
+                        <h3>Music</h3>
+                        <ul>
+                            <li>I listen to a lot of alternative rock</li>
+                            <li>Sometimes I listen to the same song for days</li>
+                            <li>I have a guitar and I'm practicing, I also want to learn drums</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-hellaverse"></i>
+                        <h3><i class="fas fa-fire"></i>Hellaverse</h3>
+                        <ul>
+                            <li>I love Helluva Boss and Hazbin Hotel</li>
+                            <li>My favorite characters are Moxxie, Millie, Stolas, Husk, Angel Dust</li>
+                            <li>My favorite song from Helluva Boss is "Just Look My Way" and from Hazbin Hotel is "Loser, Baby"</li>
+                        </ul>
+                    </div>
+                    <div class="curiosity-item">
+                        <i class="fas fa-book"></i>
+                        <h3>Manga & Manhwa</h3>
+                        <ul>
+                            <li>I love reading manga and manhwa</li>
+                            <li>I have all volumes of Tokyo Ghoul and Bungou Stray Dogs</li>
+                            <li>I have a Kaneki Kakuja action figure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galeria -->
+            <div class="section" style="grid-column: 1 / -1;">
+                <h2><span class="section-icon"><i class="fas fa-images"></i></span>Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('modal1')">
+                        <img src="img/gallery/img1.jpg" alt="Imagem 1" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal2')">
+                        <img src="img/gallery/img2.jpg" alt="Imagem 2" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal3')">
+                        <img src="img/gallery/img3.jpg" alt="Imagem 3" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal4')">
+                        <img src="img/gallery/img4.jpg" alt="Imagem 4" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal5')">
+                        <img src="img/gallery/img5.jpg" alt="Imagem 5" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal6')">
+                        <img src="img/gallery/img6.jpg" alt="Imagem 6" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal7')">
+                        <img src="img/gallery/img7.jpg" alt="Imagem 7" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal8')">
+                        <img src="img/gallery/img8.jpg" alt="Imagem 8" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal9')">
+                        <img src="img/gallery/img9.jpg" alt="Imagem 9" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal10')">
+                        <img src="img/gallery/img10.jpg" alt="Imagem 10" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal11')">
+                        <img src="img/gallery/img11.jpg" alt="Imagem 11" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal12')">
+                        <img src="img/gallery/img12.jpg" alt="Imagem 12" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal13')">
+                        <img src="img/gallery/img13.jpg" alt="Imagem 13" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal14')">
+                        <img src="img/gallery/img14.jpg" alt="Imagem 14" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal15')">
+                        <img src="img/gallery/img15.jpg" alt="Imagem 15" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal16')">
+                        <img src="img/gallery/img16.jpg" alt="Imagem 16" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal17')">
+                        <img src="img/gallery/img17.jpg" alt="Imagem 17" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal18')">
+                        <img src="img/gallery/img18.jpg" alt="Imagem 18" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal19')">
+                        <img src="img/gallery/img19.jpg" alt="Imagem 19" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal20')">
+                        <img src="img/gallery/img20.jpg" alt="Imagem 20" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal21')">
+                        <img src="img/gallery/img21.jpg" alt="Imagem 21" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal22')">
+                        <img src="img/gallery/img22.jpg" alt="Imagem 22" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal23')">
+                        <img src="img/gallery/img23.jpg" alt="Imagem 23" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal24')">
+                        <img src="img/gallery/img24.jpg" alt="Imagem 24" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal25')">
+                        <img src="img/gallery/img25.jpg" alt="Imagem 25" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal26')">
+                        <img src="img/gallery/img26.jpg" alt="Imagem 26" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal27')">
+                        <img src="img/gallery/img27.jpg" alt="Imagem 27" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal28')">
+                        <img src="img/gallery/img28.jpg" alt="Imagem 28" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal29')">
+                        <img src="img/gallery/img29.jpg" alt="Imagem 29" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal30')">
+                        <img src="img/gallery/img30.jpg" alt="Imagem 30" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal31')">
+                        <img src="img/gallery/img31.jpg" alt="Imagem 31" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal32')">
+                        <img src="img/gallery/img32.jpg" alt="Imagem 32" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal33')">
+                        <img src="img/gallery/img33.jpg" alt="Imagem 33" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                    <div class="gallery-item" onclick="openModal('modal34')">
+                        <img src="img/gallery/img34.jpg" alt="Imagem 34" class="gallery-image" loading="lazy" width="200" height="200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais para as fotos -->
+    <div id="modal1" class="modal" onclick="closeModal('modal1')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img1.jpg" alt="Imagem 1" class="modal-image">
+        </div>
+    </div>
+
+    <div id="modal2" class="modal" onclick="closeModal('modal2')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img2.jpg" alt="Imagem 2" class="modal-image">
+        </div>
+    </div>
+
+    <div id="modal3" class="modal" onclick="closeModal('modal3')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img3.jpg" alt="Imagem 3" class="modal-image">
+        </div>
+    </div>
+
+    <div id="modal4" class="modal" onclick="closeModal('modal4')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img4.jpg" alt="Imagem 4" class="modal-image">
+        </div>
+    </div>
+
+    <div id="modal5" class="modal" onclick="closeModal('modal5')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img5.jpg" alt="Imagem 5" class="modal-image">
+        </div>
+    </div>
+
+    <div id="modal6" class="modal" onclick="closeModal('modal6')">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="img/gallery/img6.jpg" alt="Imagem 6" class="modal-image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
