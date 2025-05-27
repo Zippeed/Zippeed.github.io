@@ -494,11 +494,9 @@ body {
     margin: 0;
     line-height: 1.3;
     white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    overflow: visible;
+    text-overflow: clip;
+    display: block;
 }
 
 .favorite-subtitle {
@@ -794,188 +792,6 @@ body {
     color: var(--accent-primary);
 }
 
-/* Miniplayer */
-.miniplayer {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 280px;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    font-size: 12px;
-    transition: all 0.3s ease;
-}
-
-.miniplayer:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-.mini-title {
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 8px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 13px;
-}
-
-.mini-controls {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.mini-btn {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mini-btn:hover {
-    background: rgba(177, 156, 217, 0.3);
-    transform: scale(1.05);
-}
-
-.mini-btn-play {
-    background: var(--accent-tertiary);
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-}
-
-.mini-btn-play:hover {
-    background: var(--accent-primary);
-}
-
-.mini-progress {
-    width: 100%;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 2px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    position: relative;
-}
-
-.mini-progress-bar {
-    height: 100%;
-    background: var(--accent-tertiary);
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.1s ease;
-}
-
-.mini-volume {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.mini-volume-slider {
-    width: 80px;
-    height: 3px;
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.2);
-    outline: none;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
-
-.mini-volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent-tertiary);
-    cursor: pointer;
-}
-
-.mini-volume-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent-tertiary);
-    cursor: pointer;
-    border: none;
-}
-
-.mini-time {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-left: auto;
-}
-
-.mini-toggle {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 20px;
-    height: 20px;
-    background: #ff4757;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mini-toggle:hover {
-    background: #ff3838;
-}
-
-.miniplayer.minimized {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.miniplayer.minimized > *:not(.mini-toggle):not(.mini-btn-play) {
-    display: none;
-}
-
-.miniplayer.minimized .mini-btn-play {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-}
-
-.miniplayer.minimized .mini-toggle {
-    top: -5px;
-    right: -5px;
-}
-
-@media (max-width: 768px) {
-    .miniplayer {
-        width: 260px;
-        top: 10px;
-        right: 10px;
-    }
-}
-
 /* Remover estilos antigos do player */
 .music-player,
 .music-controls,
@@ -983,7 +799,18 @@ body {
 .controls,
 .volume-container,
 .control-button,
-.volume-slider {
+.volume-slider,
+.miniplayer,
+.mini-toggle,
+.mini-title,
+.mini-progress,
+.mini-progress-bar,
+.mini-controls,
+.mini-btn,
+.mini-btn-play,
+.mini-volume,
+.mini-volume-slider,
+.mini-time {
     display: none !important;
 }
 
@@ -1428,4 +1255,10 @@ body {
         width: 80px;
         height: 80px;
     }
+}
+
+.favorite-item.manhwa .favorite-content {
+    flex-grow: 1;
+    white-space: normal;
+    overflow: visible;
 }
