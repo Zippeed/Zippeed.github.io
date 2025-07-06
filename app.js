@@ -4,7 +4,8 @@ let state = {
     activeSection: 'profile',
     isMuted: true,
     hasInitializedAudio: false,
-    translations: {} // Será preenchido com o JSON do idioma
+    translations: {}, // Será preenchido com o JSON do idioma
+    isMobileMenuOpen: false
 };
 
 // --- FUNÇÃO PRINCIPAL DE RENDERIZAÇÃO ---
@@ -28,7 +29,7 @@ function renderApp() {
         case 'records': contentHtml = renderRecords(t.records); break;
         case 'gallery': contentHtml = renderGallery(); break;
     }
-    contentWindow.innerHTML = `<h2 class="text-2xl text-red-500 mb-6 tracking-widest text-glow">${t[state.activeSection].title}</h2>${contentHtml}`;
+    contentWindow.innerHTML = `<h2 class="text-xl sm:text-2xl text-red-500 mb-4 sm:mb-6 tracking-widest text-glow">${t[state.activeSection].title}</h2>${contentHtml}`;
     contentWindow.classList.add('fade-in');
     setTimeout(() => contentWindow.classList.remove('fade-in'), 500);
 
@@ -36,7 +37,7 @@ function renderApp() {
 
     const langContainer = document.getElementById('lang-buttons');
     langContainer.innerHTML = ['pt', 'en', 'es', 'ja'].map(lang => `
-        <button data-lang="${lang}" class="lang-button px-3 py-1 text-base transition-colors ${state.language === lang ? 'bg-red-600 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}">${lang.toUpperCase()}</button>
+        <button data-lang="${lang}" class="lang-button px-2 sm:px-3 py-1 text-sm sm:text-base transition-colors ${state.language === lang ? 'bg-red-600 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}">${lang.toUpperCase()}</button>
     `).join('');
 
     addEventListeners();
@@ -50,6 +51,10 @@ function addEventListeners() {
             state.activeSection = button.dataset.section;
             soundManager.playLoad();
             renderApp();
+            // Fechar menu mobile após clicar
+            if (window.innerWidth < 1024) {
+                closeMobileMenu();
+            }
         });
     });
     
@@ -59,6 +64,39 @@ function addEventListeners() {
             loadLanguage(button.dataset.lang);
         });
     });
+}
+
+// --- FUNÇÕES DO MENU MOBILE ---
+function toggleMobileMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    
+    if (state.isMobileMenuOpen) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+}
+
+function openMobileMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    
+    sidebar.classList.remove('-translate-x-full');
+    sidebar.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+    state.isMobileMenuOpen = true;
+}
+
+function closeMobileMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    
+    sidebar.classList.remove('translate-x-0');
+    sidebar.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+    state.isMobileMenuOpen = false;
 }
 
 async function loadLanguage(lang) {
@@ -73,6 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const bootScreen = document.getElementById('boot-screen');
     const bootText = document.getElementById('boot-text');
     const muteButton = document.getElementById('mute-button');
+    
+    // Mobile menu elements
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileOverlay = document.getElementById('mobile-overlay');
     
     const bootTextContent = "INITIALIZING... PROJECT SHADOW TERMINAL...";
     let boot_i = 0;
@@ -110,6 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isMuted = !state.isMuted;
         soundManager.toggleMute(state.isMuted);
         muteButton.innerHTML = state.isMuted ? '<i class="fas fa-volume-xmark fa-lg"></i>' : '<i class="fas fa-volume-high fa-lg"></i>';
+    });
+
+    // Mobile menu event listeners
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    // Close mobile menu on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024 && state.isMobileMenuOpen) {
+            closeMobileMenu();
+        }
     });
 
     // Inicializar sistema de partículas

@@ -2,7 +2,7 @@
 
 body { 
     font-family: 'Share Tech Mono', monospace;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #000;
 }
 
@@ -43,6 +43,67 @@ h1, h2, h3, button, h4, h5 {
 
 .featured-card:hover .featured-image {
     transform: scale(1.05);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 1024px) {
+    #sidebar {
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .menu-button {
+        font-size: 1rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    .menu-button i {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .menu-button {
+        font-size: 0.9rem !important;
+        padding: 0.5rem !important;
+        gap: 0.5rem !important;
+    }
+    
+    .menu-button i {
+        font-size: 1rem !important;
+    }
+    
+    .lang-button {
+        font-size: 0.75rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .menu-button {
+        font-size: 0.85rem !important;
+        padding: 0.4rem !important;
+    }
+    
+    .menu-button i {
+        font-size: 0.9rem !important;
+    }
 }
 
 /* Custom Scrollbar Styles */
@@ -118,4 +179,29 @@ h1, h2, h3, button, h4, h5 {
 .spotify-embed iframe {
     border-radius: 12px;
     background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+}
+
+/* Mobile Lightbox Improvements */
+@media (max-width: 768px) {
+    #affinity-lightbox-modal img,
+    #gallery-lightbox-modal img {
+        max-width: 95vw !important;
+        max-height: 70vh !important;
+    }
+    
+    #affinity-lightbox-close,
+    #gallery-lightbox-close {
+        top: 16px !important;
+        right: 16px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    #affinity-lightbox-prev,
+    #affinity-lightbox-next,
+    #gallery-lightbox-prev,
+    #gallery-lightbox-next {
+        font-size: 2rem !important;
+        left: 16px !important;
+        right: 16px !important;
+    }
 } 
