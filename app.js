@@ -113,9 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const muteButton = document.getElementById('mute-button');
     
     // Mobile menu elements
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileOverlay = document.getElementById('mobile-overlay');
+    function getMobileMenuElements() {
+        return {
+            mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
+            mobileMenuClose: document.getElementById('mobile-menu-close'),
+            mobileOverlay: document.getElementById('mobile-overlay'),
+        };
+    }
     
     const bootTextContent = "INITIALIZING... PROJECT SHADOW TERMINAL...";
     let boot_i = 0;
@@ -132,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
         bootScreen.style.display = 'none';
         mainContainer.style.display = 'flex';
         loadLanguage(state.language); // Carrega o idioma inicial
+        // Adiciona listeners do menu mobile após o DOM estar pronto
+        const { mobileMenuToggle, mobileMenuClose, mobileOverlay } = getMobileMenuElements();
+        if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
     }, 3000);
 
     setInterval(() => {
@@ -155,11 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         muteButton.innerHTML = state.isMuted ? '<i class="fas fa-volume-xmark fa-lg"></i>' : '<i class="fas fa-volume-high fa-lg"></i>';
     });
 
-    // Mobile menu event listeners
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    mobileMenuClose.addEventListener('click', closeMobileMenu);
-    mobileOverlay.addEventListener('click', closeMobileMenu);
-    
     // Close mobile menu on window resize
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 1024 && state.isMobileMenuOpen) {

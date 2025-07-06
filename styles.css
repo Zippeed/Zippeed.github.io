@@ -49,7 +49,7 @@ h1, h2, h3, button, h4, h5 {
 @media (max-width: 1024px) {
     #sidebar {
         height: 100vh;
-        overflow-y: auto;
+        overflow-y: auto !important;
         position: fixed;
         top: 0;
         left: 0;
@@ -59,6 +59,7 @@ h1, h2, h3, button, h4, h5 {
         background: rgba(10,10,10,0.98);
         box-shadow: 2px 0 16px #000a;
         transition: transform 0.3s;
+        -webkit-overflow-scrolling: touch;
     }
     #sidebar.-translate-x-full {
         transform: translateX(-100%);
@@ -114,6 +115,17 @@ h1, h2, h3, button, h4, h5 {
         font-size: 0.9rem !important;
         padding: 0.5rem !important;
         gap: 0.5rem !important;
+        min-height: 48px;
+        min-width: 44px;
+        border-radius: 8px;
+        transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+        touch-action: manipulation;
+    }
+    .menu-button:active, .menu-button:focus {
+        background: rgba(255,50,50,0.15) !important;
+        color: #fff !important;
+        outline: none;
+        box-shadow: 0 0 0 2px #ff3232;
     }
     .menu-button i {
         font-size: 1rem !important;
@@ -233,4 +245,8 @@ h1, h2, h3, button, h4, h5 {
         left: 16px !important;
         right: 16px !important;
     }
+}
+
+#mobile-menu-toggle {
+    z-index: 50 !important;
 } 
