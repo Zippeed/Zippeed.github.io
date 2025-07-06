@@ -50,15 +50,53 @@ h1, h2, h3, button, h4, h5 {
     #sidebar {
         height: 100vh;
         overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 40;
+        width: 80vw;
+        max-width: 340px;
+        background: rgba(10,10,10,0.98);
+        box-shadow: 2px 0 16px #000a;
+        transition: transform 0.3s;
     }
-    
-    .menu-button {
-        font-size: 1rem !important;
-        padding: 0.75rem !important;
+    #sidebar.-translate-x-full {
+        transform: translateX(-100%);
     }
-    
-    .menu-button i {
-        font-size: 1.1rem !important;
+    #sidebar.translate-x-0 {
+        transform: translateX(0);
+    }
+    #mobile-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 30;
+        pointer-events: auto;
+        opacity: 1;
+        transition: opacity 0.2s;
+    }
+    #mobile-overlay.hidden {
+        display: none;
+        pointer-events: none;
+        opacity: 0;
+    }
+    main, #main-container > main {
+        margin-left: 0 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    #sidebar {
+        position: relative !important;
+        transform: none !important;
+        width: 25vw;
+        max-width: 340px;
+        z-index: 10;
+        box-shadow: none;
+    }
+    #mobile-overlay {
+        display: none !important;
     }
 }
 
@@ -66,25 +104,20 @@ h1, h2, h3, button, h4, h5 {
     body {
         font-size: 14px;
     }
-    
     h1 {
         font-size: 1.5rem;
     }
-    
     h2 {
         font-size: 1.25rem;
     }
-    
     .menu-button {
         font-size: 0.9rem !important;
         padding: 0.5rem !important;
         gap: 0.5rem !important;
     }
-    
     .menu-button i {
         font-size: 1rem !important;
     }
-    
     .lang-button {
         font-size: 0.75rem !important;
         padding: 0.25rem 0.5rem !important;
@@ -95,12 +128,10 @@ h1, h2, h3, button, h4, h5 {
     body {
         font-size: 13px;
     }
-    
     .menu-button {
         font-size: 0.85rem !important;
         padding: 0.4rem !important;
     }
-    
     .menu-button i {
         font-size: 0.9rem !important;
     }
@@ -188,14 +219,12 @@ h1, h2, h3, button, h4, h5 {
         max-width: 95vw !important;
         max-height: 70vh !important;
     }
-    
     #affinity-lightbox-close,
     #gallery-lightbox-close {
         top: 16px !important;
         right: 16px !important;
         font-size: 1.5rem !important;
     }
-    
     #affinity-lightbox-prev,
     #affinity-lightbox-next,
     #gallery-lightbox-prev,
