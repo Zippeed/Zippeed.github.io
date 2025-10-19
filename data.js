@@ -132,7 +132,7 @@ const languageData = {
         profile: {
             title: "Painel de Dados: Zipped",
             fields: [
-                { label: "Idade", value: "20 Anos", icon: "fa-birthday-cake" },
+                { label: "Idade", value: "21 Anos", icon: "fa-birthday-cake" },
                 { label: "Gênero", value: "Gênero Fluido", icon: "fa-venus-mars" },
                 { label: "Sexualidade", value: "Pansexual", icon: "fa-heart" },
                 { label: "Localização", value: "Brasil", icon: "fa-map-marker-alt" }
