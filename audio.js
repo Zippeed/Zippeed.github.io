@@ -1,0 +1,1 @@
+// audio.js removido — sistema de áudio desativado
