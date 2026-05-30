@@ -186,6 +186,7 @@ function renderAffinities(t) {
                              onload="this.style.opacity='1'; var s=document.getElementById('${skelId}'); if(s) s.style.display='none';" />
                         <div class="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                             <p class="text-white text-xs sm:text-sm font-bold truncate">${item.name}</p>
+                            ${item.artist ? `<p class="text-gray-300 text-[10px] sm:text-xs truncate" style="line-height: 1.1;">${item.artist}</p>` : ''}
                         </div>
                     </div>
                 `;

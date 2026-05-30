@@ -56,29 +56,29 @@ const staticData = {
             { name: "Eleceed", image: `${CDN_BASE}/imagens/manhwa/eleceed.jpg` }
         ]},
         { icon: "fas fa-user-ninja", items: [
-            { name: "Shadow the Hedgehog", image: `${CDN_BASE}/imagens/characters/shadow.jpg` },
-            { name: "Kaneki Ken", image: `${CDN_BASE}/imagens/characters/kaneki.jpg` },
-            { name: "Dazai Osamu", image: `${CDN_BASE}/imagens/characters/dazai.jpg` },
-            { name: "Moxxie", image: `${CDN_BASE}/imagens/characters/moxxie.jpg` },
-            { name: "Death", image: `${CDN_BASE}/imagens/characters/morte.jpg` }
+            { name: "Shadow the Hedgehog", artist: "Sonic the Hedgehog", image: `${CDN_BASE}/imagens/characters/shadow.jpg` },
+            { name: "Kaneki Ken", artist: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/characters/kaneki.jpg` },
+            { name: "Dazai Osamu", artist: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/characters/dazai.jpg` },
+            { name: "Moxxie", artist: "Helluva Boss", image: `${CDN_BASE}/imagens/characters/moxxie.jpg` },
+            { name: "Death", artist: "DC (Sandman)", image: `${CDN_BASE}/imagens/characters/morte.jpg` }
         ]},
         { icon: "fas fa-music", items: [
-            { name: "Die For You", image: `${CDN_BASE}/imagens/albums/DieForYou.jpg` },
-            { name: "Duvet", image: `${CDN_BASE}/imagens/albums/Duvet.jpg` },
-            { name: "Fake Plastic Trees", image: `${CDN_BASE}/imagens/albums/FakePlasticTrees.jpg` },
-            { name: "Falling Down", image: `${CDN_BASE}/imagens/albums/FallingDown.jpg` },
-            { name: "Glimpse of Us", image: `${CDN_BASE}/imagens/albums/GlimpseOfUs.jpg` },
-            { name: "Gunslinger", image: `${CDN_BASE}/imagens/albums/Gunslinger.jpg` },
-            { name: "Hail to the King", image: `${CDN_BASE}/imagens/albums/HailToTheKing.jpg` },
-            { name: "Let Down", image: `${CDN_BASE}/imagens/albums/LetDown.jpg` },
-            { name: "Loser Baby", image: `${CDN_BASE}/imagens/albums/LoserBaby.jpg` },
-            { name: "Never Fade Away", image: `${CDN_BASE}/imagens/albums/NeverFadeAway.jpg` },
-            { name: "No Surprises", image: `${CDN_BASE}/imagens/albums/NoSurprises.jpg` },
-            { name: "Poison", image: `${CDN_BASE}/imagens/albums/Poison.jpg` },
-            { name: "Reflection", image: `${CDN_BASE}/imagens/albums/Reflection.jpg` },
-            { name: "Slow Dancing", image: `${CDN_BASE}/imagens/albums/SlowDancing.jpg` },
-            { name: "So Far Away", image: `${CDN_BASE}/imagens/albums/SoFarAway.jpg` },
-            { name: "Teenagers", image: `${CDN_BASE}/imagens/albums/Teenagers.jpg` }
+            { name: "Die For You", artist: "Joji", image: `${CDN_BASE}/imagens/albums/DieForYou.jpg` },
+            { name: "Duvet", artist: "bôa", image: `${CDN_BASE}/imagens/albums/Duvet.jpg` },
+            { name: "Fake Plastic Trees", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/FakePlasticTrees.jpg` },
+            { name: "Falling Down", artist: "Lil Peep", image: `${CDN_BASE}/imagens/albums/FallingDown.jpg` },
+            { name: "Glimpse of Us", artist: "Joji", image: `${CDN_BASE}/imagens/albums/GlimpseOfUs.jpg` },
+            { name: "Gunslinger", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/Gunslinger.jpg` },
+            { name: "Hail to the King", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/HailToTheKing.jpg` },
+            { name: "Let Down", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/LetDown.jpg` },
+            { name: "Loser Baby", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/LoserBaby.jpg` },
+            { name: "Never Fade Away", artist: "SAMURAI", image: `${CDN_BASE}/imagens/albums/NeverFadeAway.jpg` },
+            { name: "No Surprises", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/NoSurprises.jpg` },
+            { name: "Poison", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/Poison.jpg` },
+            { name: "Reflection", artist: "The Neighbourhood", image: `${CDN_BASE}/imagens/albums/Reflection.jpg` },
+            { name: "Slow Dancing", artist: "Joji", image: `${CDN_BASE}/imagens/albums/SlowDancing.jpg` },
+            { name: "So Far Away", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/SoFarAway.jpg` },
+            { name: "Teenagers", artist: "My Chemical Romance", image: `${CDN_BASE}/imagens/albums/Teenagers.jpg` }
         ]},
         { icon: "fas fa-headphones", items: [
             { 
@@ -94,6 +94,26 @@ const staticData = {
             { 
                 name: "I'm vengeance", 
                 embed: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4qgbAHN8xzuBdxswRinFuB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
+                isEmbed: true
+            },
+            { 
+                name: "Saddest musics of all time", 
+                embed: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0iqeXmwNCoIfgTDsVtZIFo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
+                isEmbed: true
+            },
+            { 
+                name: "turning to ashes", 
+                embed: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/057RufGmOlvTHoEbOZ6YHB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
+                isEmbed: true
+            },
+            { 
+                name: "Soundtracks", 
+                embed: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vVGNOYEcdgVp2sXbteyYO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
+                isEmbed: true
+            },
+            { 
+                name: "I will never be happy", 
+                embed: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5DaygxyL2lbFIhD44bDdFE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
                 isEmbed: true
             }
         ]}
@@ -180,23 +200,12 @@ const languageData = {
         records: {
             title: "Registros Pessoais",
             items: [
-                "Tenho +10k horas de Counter-Strike e Fortnite em cada",
-                "Meu primeiro console foi um PlayStation 2",
-                "Prefiro jogos com narrativas profundas e que me toquem emocionalmente",
-                "Ouvinte assíduo de rock alternativo",
-                "Às vezes escuto a mesma música por dias sem parar",
-                "Tenho uma guitarra e estou aprendendo a tocar, também queria aprender Bateria",
+                "Eu amo o Shadow",
+                "Meus shipps favoritos são Sonadow, Huskerdust e M&M (Millie e Moxxie)",
                 "Amo Helluva Boss e Hazbin Hotel",
-                "Meus personagens favoritos são Moxxie, Millie, Stolas, Husk e Angel Dust",
                 "Minha música favorita de Helluva Boss é 'Just Look My Way' e de Hazbin Hotel é 'Loser, Baby'",
-                "Sou viciado em ler mangás e manhwas",
-                "Tenho a coleção completa de Tokyo Ghoul e Bungou Stray Dogs",
                 "Tenho uma action figure do Kaneki Kakuja",
-                "The past does not define me.",
-                "I decide my own path.",
-                "Sometimes, one must destroy to create something new.",
-                "I don't need friends, but I won't turn them away.",
-                "Ultimate power is a burden."
+                "Sou viciado em ler mangás e manhwas"
             ]
         },
         gallery: {
@@ -271,23 +280,12 @@ const languageData = {
         records: {
             title: "Personal Logs",
             items: [
-                "I have 10k+ hours in Counter-Strike and Fortnite each",
-                "My first console was a PlayStation 2",
-                "I prefer games with deep narratives that move me emotionally",
-                "Avid listener of alternative rock",
-                "Sometimes I listen to the same song for days on end",
-                "I have a guitar and am learning to play, I also want to learn drums",
+                "I love Shadow",
+                "My favorite ships are Sonadow, Huskerdust, and M&M (Millie and Moxxie)",
                 "I love Helluva Boss and Hazbin Hotel",
-                "My favorite characters are Moxxie, Millie, Stolas, Husk, and Angel Dust",
                 "My favorite Helluva Boss song is 'Just Look My Way' and from Hazbin Hotel is 'Loser, Baby'",
-                "I'm addicted to reading manga and manhwas",
-                "I have the complete collection of Tokyo Ghoul and Bungou Stray Dogs",
                 "I have a Kaneki Kakuja action figure",
-                "The past does not define me.",
-                "I decide my own path.",
-                "Sometimes, one must destroy to create something new.",
-                "I don't need friends, but I won't turn them away.",
-                "Ultimate power is a burden."
+                "I'm addicted to reading manga and manhwas"
             ]
         },
         gallery: {
