@@ -476,8 +476,8 @@ const languageData = {
             title: "視覚的記憶バンク"
         },
         menu: {
-            profile: "ダッシュボード",
-            affinities: "親和性",
+            profile: "パネル",
+            affinities: "好み",
             records: "記録",
             gallery: "ギャラリー"
         },

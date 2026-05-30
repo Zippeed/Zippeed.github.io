@@ -73,22 +73,7 @@ function renderProfile(t) {
         </div>
     `;
 
-    const featuredHtml = `
-        <div class="w-full lg:w-1/3 flex-shrink-0 mt-4 lg:mt-0">
-            <div class="bg-gray-900/50 border border-red-800/50 h-full flex flex-col featured-card">
-                <h3 class="text-lg sm:text-xl text-red-500 text-glow p-3 sm:p-4">${t.featuredTitle}</h3>
-                <div class="relative overflow-hidden flex-grow" style="min-height: 300px; sm:min-height: 400px;">
-                   <img src="${staticData.featuredImage}" class="absolute inset-0 w-full h-full object-cover featured-image" alt="Shadow the Hedgehog - Featured" loading="eager" />
-                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                   <div class="absolute bottom-0 left-0 p-3 sm:p-4">
-                        <h4 class="text-lg sm:text-2xl font-bold text-white">${t.featured.title}</h4>
-                        <h5 class="text-sm sm:text-lg text-red-400">${t.featured.subtitle}</h5>
-                        <p class="text-xs sm:text-base mt-2 text-gray-300">${t.featured.description}</p>
-                   </div>
-                </div>
-            </div>
-        </div>
-    `;
+    const featuredHtml = ``;
     
     setTimeout(() => {
         t.fields.forEach((field, index) => {
@@ -99,14 +84,13 @@ function renderProfile(t) {
         typeOutText(directiveEl, t.directive.value, 20);
     }, 10);
 
-    return `<div class="flex flex-col lg:flex-row gap-4">
-                <div class="w-full lg:w-2/3 flex flex-col">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">${gridFieldsHtml}</div>
+    return `<div class="flex flex-col gap-4">
+                <div class="w-full flex flex-col">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">${gridFieldsHtml}</div>
                     ${directiveHtml}
                     ${socialsHtml}
                     ${setupHtml}
                 </div>
-                ${featuredHtml}
             </div>`;
 }
 
@@ -246,6 +230,8 @@ function renderAffinities(t) {
     return html;
 }
 
+
+
 // Accordion de playlists
 window.togglePlaylist = function(card) {
     const embed   = card.querySelector('.playlist-embed');
@@ -270,22 +256,38 @@ window.togglePlaylist = function(card) {
 };
 
 function renderRecords(t) {
-    const items = t.items.map((item, index) => `
-        <div class="flex items-start gap-3 sm:gap-4 py-3 sm:py-4 border-b border-gray-800/40 last:border-0
-                    group hover:bg-red-500/5 px-2 -mx-2 transition-colors"
-             style="opacity:0; animation: recordFadeIn 0.4s ease ${(index * 0.06).toFixed(2)}s forwards;">
-            <span class="text-red-600/55 font-bold text-sm sm:text-base font-mono min-w-[2rem] text-right
-                         shrink-0 mt-0.5 group-hover:text-red-400 transition-colors select-none">
-                ${String(index + 1).padStart(2, '0')}
-            </span>
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed flex-1
-                      group-hover:text-gray-100 transition-colors">
+    const icons = ['fa-microchip', 'fa-fingerprint', 'fa-database', 'fa-satellite-dish', 'fa-memory', 'fa-network-wired', 'fa-bolt'];
+    
+    const items = t.items.map((item, index) => {
+        // Gerar um ID pseudo-aleatório baseado no index para parecer um arquivo do sistema
+        const hexId = (index * 37 + 1024).toString(16).toUpperCase().padStart(4, '0');
+        const icon = icons[index % icons.length];
+        
+        return `
+        <div class="bg-gray-800/40 border border-gray-800/80 hover:border-red-500/40 p-4 sm:p-5 transition-all duration-300
+                    group hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(255,50,50,0.12)] flex flex-col relative overflow-hidden"
+             style="opacity:0; animation: recordFadeIn 0.5s ease ${(index * 0.08).toFixed(2)}s forwards;">
+            
+            <!-- Card Accent Background -->
+            <div class="absolute top-0 right-0 w-16 h-16 bg-red-500/5 rounded-bl-full -mr-8 -mt-8 group-hover:bg-red-500/10 transition-colors pointer-events-none"></div>
+
+            <!-- Dossier Header -->
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-gray-700/50 relative z-10">
+                <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-red-500/40 group-hover:bg-red-500 group-hover:shadow-[0_0_8px_rgba(255,50,50,0.8)] transition-all"></div>
+                    <span class="text-[0.65rem] sm:text-xs font-mono text-gray-500 tracking-wider group-hover:text-red-400/80 transition-colors">LOG_0x${hexId}</span>
+                </div>
+                <i class="fas ${icon} text-gray-700/50 text-[0.7rem] group-hover:text-red-500/40 transition-colors"></i>
+            </div>
+
+            <!-- Content -->
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-100 transition-colors relative z-10">
                 ${item}
             </p>
         </div>
-    `).join('');
+    `}).join('');
 
-    return `<div>${items}</div>`;
+    return `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">${items}</div>`;
 }
 
 function renderGallery() {
@@ -376,9 +378,15 @@ function renderSystemStatus(t) {
             <h3 class="text-base sm:text-lg text-red-500 text-glow mb-2 sm:mb-3">${t.title}</h3>
             <div class="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                 <div>
-                    <p class="text-gray-400">${t.chaos}:</p>
-                    <div class="w-full bg-gray-800 border border-gray-700 h-3 sm:h-4 mt-1">
-                        <div id="chaos-bar" class="bg-red-600 h-full" style="width: 60%;"></div>
+                    <p class="text-gray-400 mb-1.5">${t.chaos}:</p>
+                    <div class="flex gap-1 sm:gap-1.5 justify-center items-center py-1 bg-gray-900/50 rounded border border-gray-800" id="chaos-emeralds">
+                        <div class="emerald emerald-green cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-red cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-blue cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-yellow cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-purple cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-cyan cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
+                        <div class="emerald emerald-white cursor-pointer hover:scale-110" onclick="window.activateEmerald(this)"></div>
                     </div>
                 </div>
                 <div class="flex justify-between items-center">
@@ -399,14 +407,22 @@ function renderSystemStatus(t) {
             </div>
         </div>`;
     
-    const chaosBar = document.getElementById('chaos-bar');
-    let widths = ['60%', '75%', '65%'];
-    let i = 0;
-    setInterval(() => {
-        if(chaosBar) {
-            chaosBar.style.transition = 'width 2s ease-in-out';
-            chaosBar.style.width = widths[i];
-            i = (i + 1) % widths.length;
+    // Minigame das esmeraldas (ativadas por clique)
+    window.activateEmerald = function(el) {
+        if(el.classList.contains('active')) return;
+        el.classList.add('active');
+        
+        const allEmeralds = document.querySelectorAll('.emerald');
+        const activeEmeralds = document.querySelectorAll('.emerald.active');
+        
+        if(activeEmeralds.length === allEmeralds.length) {
+            const containerEl = document.getElementById('chaos-emeralds');
+            if(containerEl) containerEl.classList.add('emeralds-charged');
+            
+            // Trigger easter egg
+            if(typeof window.triggerEasterEgg === 'function') {
+                setTimeout(window.triggerEasterEgg, 500); // 500ms delay for dramatic effect
+            }
         }
-    }, 2000);
+    };
 } 
