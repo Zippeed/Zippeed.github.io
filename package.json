@@ -1,0 +1,13 @@
+{
+  "name": "zippeed-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site pessoal de Zipped — P//SHADOW G.U.N. Terminal.",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

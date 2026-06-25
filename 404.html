@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - ACESSO NEGADO | P//SHADOW</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#cc0000">
+    <link rel="icon" type="image/png" href="imagens/characters/black_arms_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background:#000; color:#e5e5e5;
+            font-family:'Share Tech Mono', ui-monospace, monospace;
+            min-height:100vh; display:flex; align-items:center; justify-content:center;
+            text-align:center; padding:1.5rem; overflow:hidden;
+        }
+        .glitch-404 {
+            font-size:clamp(5rem, 22vw, 12rem); font-weight:bold; line-height:1;
+            color:#cc0000; text-shadow:0 0 18px rgba(255,0,0,0.7);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .glitch-404 { animation: flick 2.5s infinite; }
+            @keyframes flick { 0%,19%,21%,100%{opacity:1} 20%{opacity:.4} 50%{opacity:.85} }
+        }
+        .crt {
+            pointer-events:none; position:fixed; inset:0; z-index:50; opacity:.1;
+            background:
+              linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,.25) 50%),
+              linear-gradient(90deg, rgba(255,0,0,.06), rgba(0,255,0,.02), rgba(0,0,255,.06));
+            background-size:100% 4px, 3px 100%;
+        }
+        .back-link {
+            display:inline-block; margin-top:2rem; padding:.7rem 1.6rem;
+            border:1px solid #991b1b; color:#f87171; letter-spacing:.15em;
+            text-transform:uppercase; font-size:.85rem; transition:all .2s;
+        }
+        .back-link:hover { background:rgba(204,0,0,.15); color:#fff; border-color:#ef4444; }
+    </style>
+</head>
+<body>
+    <div class="crt"></div>
+    <main>
+        <p style="color:#550000; font-size:.75rem; letter-spacing:.25em;">UNAUTHORIZED SEQUENCE DETECTED — G.U.N. PROTOCOL</p>
+        <div class="glitch-404">404</div>
+        <h1 style="color:#ef4444; letter-spacing:.2em; margin-top:.5rem; font-size:1.1rem;">REGISTRO NÃO ENCONTRADO</h1>
+        <p style="color:#6b7280; max-width:34rem; margin:1rem auto 0; line-height:1.7; font-size:.85rem;">
+            O arquivo solicitado não existe ou foi classificado.<br>
+            A localização informada está fora do escopo do terminal.
+        </p>
+        <a href="/" class="back-link">&#9472; Retornar ao terminal &#9472;</a>
+    </main>
+</body>
+</html>

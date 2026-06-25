@@ -182,7 +182,7 @@ function renderAffinities(t) {
                         <div class="skeleton-box absolute inset-0" id="${skelId}"></div>
                         <img src="${item.image}" alt="${item.name}"
                              class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                             loading="lazy"
+                             loading="lazy" decoding="async"
                              onload="this.style.opacity='1'; var s=document.getElementById('${skelId}'); if(s) s.style.display='none';" />
                         <div class="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                             <p class="text-white text-xs sm:text-sm font-bold truncate">${item.name}</p>
@@ -353,7 +353,7 @@ function renderGallery() {
         return `<div class="relative border-2 border-gray-800 hover:border-red-500 transition-colors cursor-pointer overflow-hidden"
                     style="aspect-ratio:1/1;" onclick="openLightbox(${idx})">
                     <div class="skeleton-box absolute inset-0" id="${skelId}"></div>
-                    <img src="${src}" loading="lazy" alt="Gallery ${idx + 1}"
+                    <img src="${src}" loading="lazy" decoding="async" alt="Gallery ${idx + 1}"
                          class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                          onload="this.style.opacity='1'; var s=document.getElementById('${skelId}'); if(s) s.style.display='none';" />
                </div>`;

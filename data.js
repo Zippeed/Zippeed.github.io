@@ -13,72 +13,72 @@ const staticData = {
     ],
     affinities: [
         { icon: "fas fa-gamepad", items: [
-            { name: "NieR: Automata", image: `${CDN_BASE}/imagens/games/nier-automata.jpg` },
-            { name: "Cyberpunk 2077", image: `${CDN_BASE}/imagens/games/cyberpunk.jpg` },
-            { name: "Life is Strange", image: `${CDN_BASE}/imagens/games/life-is-strange.jpg` },
-            { name: "OneShot", image: `${CDN_BASE}/imagens/games/oneshot.jpg` },
-            { name: "Outer Wilds", image: `${CDN_BASE}/imagens/games/outer-wilds.jpg` }
+            { name: "NieR: Automata", image: `${CDN_BASE}/imagens/games/nier-automata.webp` },
+            { name: "Cyberpunk 2077", image: `${CDN_BASE}/imagens/games/cyberpunk.webp` },
+            { name: "Life is Strange", image: `${CDN_BASE}/imagens/games/life-is-strange.webp` },
+            { name: "OneShot", image: `${CDN_BASE}/imagens/games/oneshot.webp` },
+            { name: "Outer Wilds", image: `${CDN_BASE}/imagens/games/outer-wilds.webp` }
         ]},
         { icon: "fas fa-tv", items: [
-            { name: "Arcane", image: `${CDN_BASE}/imagens/series/arcane.jpg` },
-            { name: "Hazbin Hotel", image: `${CDN_BASE}/imagens/series/hazbin-hotel.jpg` },
-            { name: "Helluva Boss", image: `${CDN_BASE}/imagens/series/helluva-boss.jpg` },
-            { name: "Rick and Morty", image: `${CDN_BASE}/imagens/series/rick-morty.jpg` },
-            { name: "Smiling Friends", image: `${CDN_BASE}/imagens/series/smiling-friends.jpg` }
+            { name: "Arcane", image: `${CDN_BASE}/imagens/series/arcane.webp` },
+            { name: "Hazbin Hotel", image: `${CDN_BASE}/imagens/series/hazbin-hotel.webp` },
+            { name: "Helluva Boss", image: `${CDN_BASE}/imagens/series/helluva-boss.webp` },
+            { name: "Rick and Morty", image: `${CDN_BASE}/imagens/series/rick-morty.webp` },
+            { name: "Smiling Friends", image: `${CDN_BASE}/imagens/series/smiling-friends.webp` }
         ]},
         { icon: "fas fa-film", items: [
-            { name: "Blade Runner 2049", image: `${CDN_BASE}/imagens/movies/blade-runner2049.jpg` },
-            { name: "Eternal Sunshine", image: `${CDN_BASE}/imagens/movies/eternal-sunshine.jpg` },
-            { name: "La La Land", image: `${CDN_BASE}/imagens/movies/la-la-land.jpg` },
-            { name: "The Batman", image: `${CDN_BASE}/imagens/movies/batman.jpg` },
-            { name: "Look Back", image: `${CDN_BASE}/imagens/movies/look-back.jpg` },
-            { name: "The Wild Robot", image: `${CDN_BASE}/imagens/movies/wild-robot.jpg` }
+            { name: "Blade Runner 2049", image: `${CDN_BASE}/imagens/movies/blade-runner2049.webp` },
+            { name: "Eternal Sunshine", image: `${CDN_BASE}/imagens/movies/eternal-sunshine.webp` },
+            { name: "La La Land", image: `${CDN_BASE}/imagens/movies/la-la-land.webp` },
+            { name: "The Batman", image: `${CDN_BASE}/imagens/movies/batman.webp` },
+            { name: "Look Back", image: `${CDN_BASE}/imagens/movies/look-back.webp` },
+            { name: "The Wild Robot", image: `${CDN_BASE}/imagens/movies/wild-robot.webp` }
         ]},
         { icon: "fas fa-shield-halved", items: [
-            { name: "Cyberpunk: Edgerunners", image: `${CDN_BASE}/imagens/animes/edgerunners.jpg` },
-            { name: "Cowboy Bebop", image: `${CDN_BASE}/imagens/animes/cowboy-bebop.jpg` },
-            { name: "JoJo's Bizarre Adventure", image: `${CDN_BASE}/imagens/animes/jojo.jpg` },
-            { name: "Monster", image: `${CDN_BASE}/imagens/animes/monster.jpg` },
-            { name: "Beastars", image: `${CDN_BASE}/imagens/animes/beastars.jpg` }
+            { name: "Cyberpunk: Edgerunners", image: `${CDN_BASE}/imagens/animes/edgerunners.webp` },
+            { name: "Cowboy Bebop", image: `${CDN_BASE}/imagens/animes/cowboy-bebop.webp` },
+            { name: "JoJo's Bizarre Adventure", image: `${CDN_BASE}/imagens/animes/jojo.webp` },
+            { name: "Monster", image: `${CDN_BASE}/imagens/animes/monster.webp` },
+            { name: "Beastars", image: `${CDN_BASE}/imagens/animes/beastars.webp` }
         ]},
         { icon: "fas fa-book-open", items: [
-            { name: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/manga/bsd.jpg` },
-            { name: "Fire Force", image: `${CDN_BASE}/imagens/manga/fire-force.jpg` },
-            { name: "Soul Eater", image: `${CDN_BASE}/imagens/manga/soul-eater.jpg` },
-            { name: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/manga/tokyo-ghoul.jpg` },
-            { name: "Goodnight Punpun", image: `${CDN_BASE}/imagens/manga/punpun.jpg` }
+            { name: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/manga/bsd.webp` },
+            { name: "Fire Force", image: `${CDN_BASE}/imagens/manga/fire-force.webp` },
+            { name: "Soul Eater", image: `${CDN_BASE}/imagens/manga/soul-eater.webp` },
+            { name: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/manga/tokyo-ghoul.webp` },
+            { name: "Goodnight Punpun", image: `${CDN_BASE}/imagens/manga/punpun.webp` }
         ]},
         { icon: "fas fa-book", items: [
-            { name: "Solo Leveling", image: `${CDN_BASE}/imagens/manhwa/solo-leveling.jpg` },
-            { name: "Omniscient Reader", image: `${CDN_BASE}/imagens/manhwa/orv.jpg` },
-            { name: "The Beginning After The End", image: `${CDN_BASE}/imagens/manhwa/tbate.jpg` },
-            { name: "Tower of God", image: `${CDN_BASE}/imagens/manhwa/tog.jpg` },
-            { name: "Eleceed", image: `${CDN_BASE}/imagens/manhwa/eleceed.jpg` }
+            { name: "Solo Leveling", image: `${CDN_BASE}/imagens/manhwa/solo-leveling.webp` },
+            { name: "Omniscient Reader", image: `${CDN_BASE}/imagens/manhwa/orv.webp` },
+            { name: "The Beginning After The End", image: `${CDN_BASE}/imagens/manhwa/tbate.webp` },
+            { name: "Tower of God", image: `${CDN_BASE}/imagens/manhwa/tog.webp` },
+            { name: "Eleceed", image: `${CDN_BASE}/imagens/manhwa/eleceed.webp` }
         ]},
         { icon: "fas fa-user-ninja", items: [
-            { name: "Shadow the Hedgehog", artist: "Sonic the Hedgehog", image: `${CDN_BASE}/imagens/characters/shadow.jpg` },
-            { name: "Kaneki Ken", artist: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/characters/kaneki.jpg` },
-            { name: "Dazai Osamu", artist: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/characters/dazai.jpg` },
-            { name: "Moxxie", artist: "Helluva Boss", image: `${CDN_BASE}/imagens/characters/moxxie.jpg` },
-            { name: "Death", artist: "DC (Sandman)", image: `${CDN_BASE}/imagens/characters/morte.jpg` }
+            { name: "Shadow the Hedgehog", artist: "Sonic the Hedgehog", image: `${CDN_BASE}/imagens/characters/shadow.webp` },
+            { name: "Kaneki Ken", artist: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/characters/kaneki.webp` },
+            { name: "Dazai Osamu", artist: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/characters/dazai.webp` },
+            { name: "Moxxie", artist: "Helluva Boss", image: `${CDN_BASE}/imagens/characters/moxxie.webp` },
+            { name: "Death", artist: "DC (Sandman)", image: `${CDN_BASE}/imagens/characters/morte.webp` }
         ]},
         { icon: "fas fa-music", items: [
-            { name: "Die For You", artist: "Joji", image: `${CDN_BASE}/imagens/albums/DieForYou.jpg` },
-            { name: "Duvet", artist: "bôa", image: `${CDN_BASE}/imagens/albums/Duvet.jpg` },
-            { name: "Fake Plastic Trees", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/FakePlasticTrees.jpg` },
-            { name: "Falling Down", artist: "Lil Peep", image: `${CDN_BASE}/imagens/albums/FallingDown.jpg` },
-            { name: "Glimpse of Us", artist: "Joji", image: `${CDN_BASE}/imagens/albums/GlimpseOfUs.jpg` },
-            { name: "Gunslinger", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/Gunslinger.jpg` },
-            { name: "Hail to the King", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/HailToTheKing.jpg` },
-            { name: "Let Down", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/LetDown.jpg` },
-            { name: "Loser Baby", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/LoserBaby.jpg` },
-            { name: "Never Fade Away", artist: "SAMURAI", image: `${CDN_BASE}/imagens/albums/NeverFadeAway.jpg` },
-            { name: "No Surprises", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/NoSurprises.jpg` },
-            { name: "Poison", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/Poison.jpg` },
-            { name: "Reflection", artist: "The Neighbourhood", image: `${CDN_BASE}/imagens/albums/Reflection.jpg` },
-            { name: "Slow Dancing", artist: "Joji", image: `${CDN_BASE}/imagens/albums/SlowDancing.jpg` },
-            { name: "So Far Away", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/SoFarAway.jpg` },
-            { name: "Teenagers", artist: "My Chemical Romance", image: `${CDN_BASE}/imagens/albums/Teenagers.jpg` }
+            { name: "Die For You", artist: "Joji", image: `${CDN_BASE}/imagens/albums/DieForYou.webp` },
+            { name: "Duvet", artist: "bôa", image: `${CDN_BASE}/imagens/albums/Duvet.webp` },
+            { name: "Fake Plastic Trees", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/FakePlasticTrees.webp` },
+            { name: "Falling Down", artist: "Lil Peep", image: `${CDN_BASE}/imagens/albums/FallingDown.webp` },
+            { name: "Glimpse of Us", artist: "Joji", image: `${CDN_BASE}/imagens/albums/GlimpseOfUs.webp` },
+            { name: "Gunslinger", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/Gunslinger.webp` },
+            { name: "Hail to the King", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/HailToTheKing.webp` },
+            { name: "Let Down", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/LetDown.webp` },
+            { name: "Loser Baby", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/LoserBaby.webp` },
+            { name: "Never Fade Away", artist: "SAMURAI", image: `${CDN_BASE}/imagens/albums/NeverFadeAway.webp` },
+            { name: "No Surprises", artist: "Radiohead", image: `${CDN_BASE}/imagens/albums/NoSurprises.webp` },
+            { name: "Poison", artist: "Hazbin Hotel", image: `${CDN_BASE}/imagens/albums/Poison.webp` },
+            { name: "Reflection", artist: "The Neighbourhood", image: `${CDN_BASE}/imagens/albums/Reflection.webp` },
+            { name: "Slow Dancing", artist: "Joji", image: `${CDN_BASE}/imagens/albums/SlowDancing.webp` },
+            { name: "So Far Away", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/SoFarAway.webp` },
+            { name: "Teenagers", artist: "My Chemical Romance", image: `${CDN_BASE}/imagens/albums/Teenagers.webp` }
         ]},
         { icon: "fas fa-headphones", items: [
             { 
@@ -119,18 +119,18 @@ const staticData = {
         ]}
     ],
     gallery: [
-        `${CDN_BASE}/imagens/gallery/gallery1.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery2.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery3.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery4.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery5.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery6.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery7.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery8.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery9.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery10.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery11.jpg`,
-        `${CDN_BASE}/imagens/gallery/gallery12.jpg`
+        `${CDN_BASE}/imagens/gallery/gallery1.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery2.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery3.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery4.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery5.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery6.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery7.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery8.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery9.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery10.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery11.webp`,
+        `${CDN_BASE}/imagens/gallery/gallery12.webp`
     ],
     menuIcons: { profile: "fas fa-user", affinities: "fas fa-heart", records: "fas fa-book-open", gallery: "fas fa-image" },
     languageLevels: [ "100%", "60%", "30%" ],

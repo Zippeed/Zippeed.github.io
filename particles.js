@@ -130,5 +130,11 @@ function animateParticles() {
     connectParticles();
 }
 
-initParticles();
-animateParticles();
+// Respeita quem prefere menos movimento: não anima e esconde o canvas
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const pCanvas = document.getElementById('particle-canvas');
+    if (pCanvas) pCanvas.style.display = 'none';
+} else {
+    initParticles();
+    animateParticles();
+}

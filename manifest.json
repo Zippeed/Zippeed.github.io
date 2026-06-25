@@ -1,0 +1,26 @@
+{
+  "name": "P//SHADOW - G.U.N. Terminal | Zipped",
+  "short_name": "P//SHADOW",
+  "description": "Site pessoal de Zipped — gamer, streamer e entusiasta de tecnologia do Brasil.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#cc0000",
+  "lang": "pt-BR",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "imagens/characters/black_arms_logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "imagens/characters/black_arms_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

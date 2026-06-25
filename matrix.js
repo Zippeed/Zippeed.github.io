@@ -34,7 +34,12 @@ if (mCanvas) {
         }
     }
 
-    setInterval(drawMatrix, 50);
+    // Respeita quem prefere menos movimento: não anima e esconde o canvas
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        mCanvas.style.display = 'none';
+    } else {
+        setInterval(drawMatrix, 50);
+    }
 
     window.addEventListener('resize', () => {
         mCanvas.width = window.innerWidth;

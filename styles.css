@@ -513,7 +513,7 @@ body.super-shadow-mode #dynamic-shadow-bg img {
     opacity: 0.1;
     pointer-events: none;
     mix-blend-mode: screen;
-    background-image: url('https://cdn.jsdelivr.net/gh/Zippeed/Zippeed.github.io@main/imagens/characters/shadow.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/Zippeed/Zippeed.github.io@main/imagens/characters/shadow.webp');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 150%;
@@ -556,3 +556,15 @@ body.super-shadow-mode #dynamic-shadow-bg img {
 }
 
 #mobile-menu-toggle { z-index: 120 !important; }
+
+/* ===== ACESSIBILIDADE: reduz movimento ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    /* fundos animados desativados também via JS (matrix.js / particles.js) */
+    #matrix-canvas, #particle-canvas { display: none !important; }
+}

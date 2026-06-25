@@ -9,6 +9,13 @@ let state = {
 const LASTFM_API_KEY = '31c08757e873df3470825f5bff492629';
 const LASTFM_USER    = 'Zippeed';
 
+// --- UTIL: escapa texto vindo de fontes externas antes de injetar via innerHTML ---
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[ch]));
+}
+
 // --- LAST.FM NOW PLAYING ---
 async function fetchNowPlaying() {
     try {
@@ -20,8 +27,8 @@ async function fetchNowPlaying() {
         if (!track) return;
 
         const isNowPlaying = track['@attr']?.nowplaying === 'true';
-        const trackName    = track.name               || '—';
-        const artistName   = track.artist?.['#text']  || '—';
+        const trackName    = escapeHtml(track.name              || '—');
+        const artistName   = escapeHtml(track.artist?.['#text'] || '—');
 
         const el = document.getElementById('now-playing');
         if (!el) return;

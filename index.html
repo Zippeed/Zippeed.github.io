@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>P//SHADOW - G.U.N. Terminal</title>
 
-    <!-- SEO & Open Graph Meta Tags -->
-    <meta name="description" content="Acesso restrito: Terminal de registros G.U.N. Projeto Shadow. The Ultimate Lifeform.">
-    <meta name="theme-color" content="#cc0000">
-    <meta property="og:title" content="P//SHADOW - G.U.N. Terminal">
-    <meta property="og:description" content="Acesso restrito: Arquivos confidenciais do Projeto Shadow.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Zippeed/Zippeed.github.io/main/imagens/characters/black_arms_logo.png">
-    <meta property="og:url" content="https://zippeed.github.io/">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="imagens/characters/black_arms_logo.png">
-
     <!-- SEO -->
+    <meta name="description" content="Site pessoal de Zipped — gamer, streamer e entusiasta de tecnologia do Brasil. Terminal de registros G.U.N. / Projeto Shadow.">
     <meta name="keywords" content="Zipped, Zippedsz, gamer, streamer, Twitch, portfolio, site pessoal">
     <meta name="author" content="Zipped">
+    <meta name="theme-color" content="#cc0000">
     <link rel="canonical" href="https://zippeed.github.io/">
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="imagens/characters/black_arms_logo.png">
+    <link rel="apple-touch-icon" href="imagens/characters/black_arms_logo.png">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -39,9 +34,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Tailwind CSS (utilitários de layout) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { future: {}, theme: { extend: {} } }</script>
+    <!-- Tailwind CSS (compilado estaticamente — sem CDN em runtime) -->
+    <link rel="stylesheet" href="tailwind.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -50,6 +44,31 @@
     <link rel="preload" as="image" href="imagens/characters/perfil.png">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Dados estruturados (schema.org Person) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Zipped",
+      "alternateName": "Zippedsz",
+      "url": "https://zippeed.github.io/",
+      "image": "https://zippeed.github.io/imagens/characters/perfil.png",
+      "description": "Gamer, streamer e entusiasta de tecnologia do Brasil.",
+      "nationality": "Brazilian",
+      "sameAs": [
+        "https://www.twitch.tv/zippedsz",
+        "https://x.com/Zippeed",
+        "https://www.instagram.com/zippedsz/",
+        "https://github.com/Zippeed",
+        "https://steamcommunity.com/id/ShadowZipped/",
+        "https://www.last.fm/pt/user/Zippeed",
+        "https://letterboxd.com/Zippeed/"
+      ]
+    }
+    </script>
+</head>
+<body>
     <!-- CRT Overlay -->
     <div class="pointer-events-none fixed inset-0 z-50 opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
     
@@ -76,14 +95,14 @@
                     <div id="audio-controller" class="bg-gray-900/80 border border-red-900/50 p-2 rounded-lg flex flex-col gap-2 backdrop-blur-sm transition-all hover:border-red-500">
                         <div class="flex items-center justify-between px-1">
                             <div class="flex items-center gap-3">
-                                <button id="bgm-prev-btn" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
-                                    <i class="fas fa-step-backward"></i>
+                                <button id="bgm-prev-btn" aria-label="Faixa anterior" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
+                                    <i class="fas fa-step-backward" aria-hidden="true"></i>
                                 </button>
-                                <button id="bgm-play-btn" class="text-red-500 hover:text-white transition-colors outline-none focus:outline-none w-5 flex justify-center">
-                                    <i class="fas fa-play" id="bgm-icon"></i>
+                                <button id="bgm-play-btn" aria-label="Tocar / pausar" class="text-red-500 hover:text-white transition-colors outline-none focus:outline-none w-5 flex justify-center">
+                                    <i class="fas fa-play" id="bgm-icon" aria-hidden="true"></i>
                                 </button>
-                                <button id="bgm-next-btn" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
-                                    <i class="fas fa-step-forward"></i>
+                                <button id="bgm-next-btn" aria-label="Próxima faixa" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
+                                    <i class="fas fa-step-forward" aria-hidden="true"></i>
                                 </button>
                             </div>
                             
@@ -97,7 +116,7 @@
                         
                         <div class="flex items-center justify-between gap-2 mt-1">
                             <i class="fas fa-volume-down text-gray-600 text-xs"></i>
-                            <input type="range" id="bgm-vol-slider" min="0" max="100" value="5" class="flex-grow h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer focus:outline-none accent-red-600">
+                            <input type="range" id="bgm-vol-slider" aria-label="Volume da música" min="0" max="100" value="5" class="flex-grow h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer focus:outline-none accent-red-600">
                             <span id="bgm-vol-display" class="text-xs text-gray-400 font-mono w-8 text-right">5%</span>
                         </div>
                     </div>
@@ -131,15 +150,15 @@
     <div id="main-container" class="w-screen min-h-screen flex flex-col lg:flex-row font-mono relative z-10">
         
         <!-- Menu Mobile Toggle -->
-        <button id="mobile-menu-toggle" class="lg:hidden fixed top-4 left-4 z-30 bg-gray-900/80 p-3 border border-red-800/50 text-red-500 hover:bg-red-500/20 transition-colors">
-            <i class="fas fa-bars text-xl"></i>
+        <button id="mobile-menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false" class="lg:hidden fixed top-4 left-4 z-30 bg-gray-900/80 p-3 border border-red-800/50 text-red-500 hover:bg-red-500/20 transition-colors">
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
         </button>
         
         <!-- Barra Lateral -->
         <aside id="sidebar" class="w-full lg:w-1/4 lg:max-w-xs h-auto lg:h-screen ui-background border-b-2 lg:border-b-0 lg:border-r-2 border-red-900 p-4 flex flex-col flex-shrink-0 transform lg:transform-none transition-transform duration-300 lg:relative fixed top-0 left-0 z-20 lg:z-10 -translate-x-full lg:translate-x-0">
             <!-- Botão fechar mobile -->
-            <button id="mobile-menu-close" class="lg:hidden absolute top-4 right-4 text-red-500 hover:text-white text-xl">
-                <i class="fas fa-times"></i>
+            <button id="mobile-menu-close" aria-label="Fechar menu" class="lg:hidden absolute top-4 right-4 text-red-500 hover:text-white text-xl">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             
             <div class="relative z-10 flex-grow flex flex-col overflow-y-auto pr-2 custom-scrollbar">
@@ -192,5 +211,14 @@
     <script src="matrix.js"></script>
     <script src="app.js"></script>
     <script src="easter-egg.js"></script>
+
+    <!-- Registro do Service Worker (offline / cache) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
 </body>
 </html>
