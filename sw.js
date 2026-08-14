@@ -1,7 +1,7 @@
 // Service Worker — P//SHADOW
 // Estratégia: app shell em cache-first; demais GETs em stale-while-revalidate.
 // Bump a versão pra forçar atualização quando arquivos mudarem.
-const CACHE = 'pshadow-v2';
+const CACHE = 'pshadow-v3';
 
 const APP_SHELL = [
   './',

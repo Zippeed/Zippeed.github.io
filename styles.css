@@ -517,7 +517,7 @@ body.super-shadow-mode #dynamic-shadow-bg img {
     opacity: 0.1;
     pointer-events: none;
     mix-blend-mode: screen;
-    background-image: url('https://cdn.jsdelivr.net/gh/Zippeed/Zippeed.github.io@main/imagens/characters/shadow.webp');
+    background-image: url('./imagens/characters/shadow.webp');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 150%;

@@ -1,5 +1,7 @@
 // --- DADOS ESTÁTICOS (NÃO TRADUZÍVEIS) ---
-const CDN_BASE = 'https://cdn.jsdelivr.net/gh/Zippeed/Zippeed.github.io@main';
+// Usa os arquivos publicados pelo proprio GitHub Pages. Assim as imagens
+// atualizam junto com o site e tambem podem ser armazenadas pelo service worker.
+const CDN_BASE = '.';
 
 const staticData = {
     socials: [
