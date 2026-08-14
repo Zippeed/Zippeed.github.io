@@ -134,7 +134,6 @@ const staticData = {
     ],
     menuIcons: { profile: "fas fa-user", affinities: "fas fa-heart", records: "fas fa-book-open", gallery: "fas fa-image" },
     languageLevels: [ "100%", "60%", "30%" ],
-    featuredImage: `${CDN_BASE}/imagens/shadowfocus.png`,
     setup: [
         { value: "AMD Ryzen 7 5700X", icon: "fas fa-microchip" },
         { value: "NVIDIA GeForce RTX 3060 12GB ZOTAC", icon: "fas fa-gamepad" },

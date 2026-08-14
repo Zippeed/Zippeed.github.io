@@ -470,6 +470,11 @@ body.super-shadow-mode #dynamic-shadow-bg img {
     }
 }
 
+@media (max-width: 639px) {
+    /* Reserva espaço para idioma + player fixos no topo do celular. */
+    #main-container > main { padding-top: 11.5rem !important; }
+}
+
 @media (max-width: 480px) {
     body { font-size: 13px; }
     .menu-button   { font-size: 0.85rem !important; padding: 0.4rem !important; }
@@ -501,7 +506,6 @@ body.super-shadow-mode #dynamic-shadow-bg img {
 }
 
 #sidebar {
-    position: relative;
     overflow: hidden;
 }
 

@@ -1,8 +1,7 @@
+function setupParticles() {
+const canvas = document.getElementById('particle-canvas');
+if (!canvas) return;
 
-let canvas, ctx, particlesArray, mouse;
-
-function initParticles() {
-   const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -18,7 +17,7 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     mouse.radius = (canvas.height / 80) * (canvas.width / 80);
-    initParticles();
+    createParticles();
 });
 
 window.addEventListener('mousemove', (event) => {
@@ -79,7 +78,7 @@ class Particle {
     }
 }
 
-function initParticles() {
+function createParticles() {
     particlesArray = [];
     let numberOfParticles = (canvas.height * canvas.width) / 14000;
     
@@ -135,6 +134,9 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const pCanvas = document.getElementById('particle-canvas');
     if (pCanvas) pCanvas.style.display = 'none';
 } else {
-    initParticles();
+    createParticles();
     animateParticles();
 }
+}
+
+setupParticles();

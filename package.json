@@ -5,9 +5,12 @@
   "description": "Site pessoal de Zipped — P//SHADOW G.U.N. Terminal.",
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --minify",
-    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --watch"
+    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --watch",
+    "check": "node scripts/check-project.js",
+    "verify": "npm run build:css && npm run check",
+    "prepare:upload": "npm run verify && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-upload.ps1"
   },
   "devDependencies": {
-    "tailwindcss": "3.4.17"
+    "tailwindcss": "^3.4.19"
   }
 }

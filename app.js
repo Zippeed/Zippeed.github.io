@@ -156,18 +156,28 @@ function toggleMobileMenu() {
 function openMobileMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('mobile-overlay');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const toggleIcon = toggle?.querySelector('i');
     sidebar.classList.remove('-translate-x-full');
     sidebar.classList.add('translate-x-0');
     overlay.classList.remove('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+    toggle?.setAttribute('aria-label', 'Fechar menu');
+    toggleIcon?.classList.replace('fa-bars', 'fa-times');
     state.isMobileMenuOpen = true;
 }
 
 function closeMobileMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('mobile-overlay');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const toggleIcon = toggle?.querySelector('i');
     sidebar.classList.remove('translate-x-0');
     sidebar.classList.add('-translate-x-full');
     overlay.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'Abrir menu');
+    toggleIcon?.classList.replace('fa-times', 'fa-bars');
     state.isMobileMenuOpen = false;
 }
 
@@ -184,16 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function getMobileMenuElements() {
         return {
             mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
-            mobileMenuClose:  document.getElementById('mobile-menu-close'),
             mobileOverlay:    document.getElementById('mobile-overlay'),
         };
     }
 
     loadLanguage(state.language);
 
-    const { mobileMenuToggle, mobileMenuClose, mobileOverlay } = getMobileMenuElements();
+    const { mobileMenuToggle, mobileOverlay } = getMobileMenuElements();
     if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    if (mobileMenuClose)  mobileMenuClose.addEventListener('click', closeMobileMenu);
     if (mobileOverlay)    mobileOverlay.addEventListener('click', closeMobileMenu);
 
     // Last.fm

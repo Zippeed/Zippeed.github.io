@@ -73,8 +73,6 @@ function renderProfile(t) {
         </div>
     `;
 
-    const featuredHtml = ``;
-    
     setTimeout(() => {
         t.fields.forEach((field, index) => {
             const el = document.getElementById(`profile-field-${index}`);
