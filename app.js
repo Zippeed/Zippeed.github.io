@@ -35,9 +35,9 @@ function render({ focus = false } = {}) {
   $('lang-buttons').innerHTML = Object.entries(languageNames).map(([lang, name]) => `<button class="lang-button" data-lang="${lang}" lang="${lang}" aria-label="${name}" aria-pressed="${lang === state.language}">${lang.toUpperCase()}</button>`).join('');
   $('lang-buttons').setAttribute('aria-label', text.language);
   $('section-label').textContent = tr.menu[state.section];
-  $('space-label').textContent = text.home;
+  $('space-label').textContent = 'G.U.N. / P-SHADOW';
   $('skip-link').textContent = text.skip;
-  $('footer-text').textContent = text.footer;
+  $('footer-text').textContent = `G.U.N. TERMINAL // ${state.section.toUpperCase()}`;
   $('content-window').innerHTML = state.section === 'profile' ? renderProfile(tr.profile, text, tr.status) : state.section === 'affinities' ? renderAffinities(tr.affinities, text, state.category) : state.section === 'records' ? renderRecords(tr.records, text) : renderGallery(tr.gallery, text);
   $('system-status-container').innerHTML = renderStatus(tr.status, text, state.emeralds);
   $('secret-description').textContent = text.secret;
@@ -166,8 +166,7 @@ function navigateLightbox(direction) {
   updateLightbox();
 }
 function syncThemeImage() {
-  const image = $('hero-character');
-  if (image) image.src = document.body.classList.contains('super-shadow-mode') ? 'imagens/characters/super-shadow.webp' : 'imagens/characters/shadow-hero.webp';
+  document.querySelector('.workspace').classList.toggle('super-active', document.body.classList.contains('super-shadow-mode'));
 }
 function activateSuper() {
   if ($('easter-egg-overlay').open) return;

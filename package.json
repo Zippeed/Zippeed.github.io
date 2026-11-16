@@ -1,6 +1,6 @@
 {
   "name": "pshadow-terminal",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "private": true,
   "type": "module",
   "description": "Site pessoal de Zipped. JavaScript modular, CSS nativo e zero dependências de runtime.",
@@ -13,5 +13,7 @@
     "verify": "npm run check && npm test && npm run build",
     "prepare:upload": "npm run verify"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }

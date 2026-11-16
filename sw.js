@@ -1,6 +1,6 @@
 // Versioned offline shell. Network-first code avoids serving stale releases.
-const CACHE = 'pshadow-v6';
-const SHELL = ['./','./index.html','./styles.css','./app.js','./data.js','./ui.js','./icons.js','./audio.js','./renderers.js','./manifest.json','./imagens/characters/perfil.webp','./imagens/characters/black-arms.webp','./imagens/characters/shadow-hero.webp'];
+const CACHE = 'pshadow-v6.1';
+const SHELL = ['./','./index.html','./styles.css','./app.js','./data.js','./ui.js','./icons.js','./audio.js','./renderers.js','./manifest.json','./fonts/VT323-Regular.woff','./fonts/ShareTechMono-Regular.woff','./imagens/characters/perfil.webp','./imagens/characters/black-arms.webp','./imagens/characters/shadow-hero.webp'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
 });

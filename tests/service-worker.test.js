@@ -6,7 +6,7 @@ const source=readFileSync(new URL('../sw.js',import.meta.url),'utf8');
 function worker(){
   const events={};const entries=new Map();const removed=[];
   const cache={addAll:async()=>{},put:async(req,res)=>entries.set(req.url,res),match:async req=>entries.get(typeof req==='string'?req:req.url),keys:async()=>[],delete:async()=>true};
-  const context={URL,Response,Promise,self:{location:{origin:'https://example.com'},registration:{scope:'https://example.com/'},addEventListener:(type,fn)=>events[type]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>cache,keys:async()=>['pshadow-v4','pshadow-v6','unrelated-cache'],delete:async key=>removed.push(key)},fetch:async()=>{throw new Error('offline');}};
+  const context={URL,Response,Promise,self:{location:{origin:'https://example.com'},registration:{scope:'https://example.com/'},addEventListener:(type,fn)=>events[type]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>cache,keys:async()=>['pshadow-v4','pshadow-v6.1','unrelated-cache'],delete:async key=>removed.push(key)},fetch:async()=>{throw new Error('offline');}};
   vm.runInNewContext(source,context);
   return {events,context,entries,removed};
 }

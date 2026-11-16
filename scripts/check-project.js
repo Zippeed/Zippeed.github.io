@@ -22,7 +22,7 @@ for (const tag of ['<head>','</head>','<body>','</body>','</html>']) if (html.sp
 if (/user-scalable=no|maximum-scale=1/.test(html)) errors.push('Zoom não pode ser bloqueado.');
 if (/cdn\.tailwindcss|cdnjs|fonts\.googleapis/.test(html)) errors.push('Dependência visual externa inesperada.');
 if (!html.includes('type="module" src="app.js"')) errors.push('Entrada ESM ausente.');
-const assets = new Set();
+const assets = new Set(['fonts/VT323-Regular.woff','fonts/ShareTechMono-Regular.woff',...['twitch','x-twitter','instagram','github','steam','lastfm','letterboxd'].map(name=>`imagens/icons/${name}.svg`)]);
 for (const file of required.filter(f => /\.(html|css|js)$/.test(f))) {
   const source = fs.readFileSync(path.join(root,file),'utf8');
   const matches = source.match(/(?:\.\/)?(?:audio|imagens)\/[A-Za-z0-9_./%() -]+\.(?:avif|gif|jpe?g|mp3|ogg|png|svg|webp)/g) || [];

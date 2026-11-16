@@ -6,6 +6,9 @@ const files=['index.html','styles.css','app.js','data.js','icons.js','ui.js','re
 const assets=new Set(staticData.affinities.flatMap(c=>c.items).filter(i=>i.image).map(i=>i.image.replace(/^\.\//,'')));
 staticData.gallery.forEach(a=>assets.add(a.replace(/^\.\//,'')));
 for(const asset of [...assets]) assets.add(asset.replace('imagens/','imagens/thumbs/'));
+for(const icon of ['twitch','x-twitter','instagram','github','steam','lastfm','letterboxd']) assets.add(`imagens/icons/${icon}.svg`);
+for(const font of ['VT323','ShareTechMono']) { assets.add(`fonts/${font}-Regular.woff`); assets.add(`fonts/${font}-OFL.txt`); }
+assets.add('imagens/icons/LICENSE.txt');
 for(const file of files){
   const source=await readFile(join(root,file),'utf8');
   for(const asset of source.match(/(?:audio|imagens)\/[A-Za-z0-9_./%() -]+\.(?:avif|gif|jpe?g|mp3|ogg|png|svg|webp)/g)||[])assets.add(asset);

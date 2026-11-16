@@ -9,7 +9,7 @@
     <meta name="description" content="Site pessoal de Zipped — gamer, streamer e entusiasta de tecnologia do Brasil. Terminal de registros G.U.N. / Projeto Shadow.">
     <meta name="keywords" content="Zipped, Zippedsz, gamer, streamer, Twitch, portfolio, site pessoal">
     <meta name="author" content="Zipped">
-    <meta name="theme-color" content="#e74b53">
+    <meta name="theme-color" content="#ed2638">
     <link rel="canonical" href="https://zippeed.github.io/">
 
     <!-- Favicon & PWA -->
@@ -30,6 +30,8 @@
     <meta name="twitter:image" content="https://zippeed.github.io/imagens/characters/perfil.png">
 
     <link rel="preload" as="image" href="imagens/characters/perfil.webp">
+    <link rel="preload" href="fonts/ShareTechMono-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/VT323-Regular.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <!-- Dados estruturados (schema.org Person) -->
     <script type="application/ld+json">
@@ -60,26 +62,26 @@
         <aside id="sidebar" class="sidebar">
             <a class="brand" href="#profile" aria-label="P//SHADOW — Zipped">
                 <img src="imagens/characters/black-arms.webp" width="32" height="40" alt="">
-                <span>P<span class="brand-slashes">//</span>SHADOW<small>G.U.N. personal terminal</small></span>
+                <span>P<span class="brand-slashes">//</span>SHADOW<small>G.U.N. / PROJECT SHADOW</small></span>
             </a>
             <div class="sidebar-identity">
                 <button id="profile-secret" class="avatar-button" aria-label="Zipped">
                     <img src="imagens/characters/perfil.webp" alt="Zipped" width="88" height="88" fetchpriority="high">
                     <span class="avatar-status" aria-hidden="true"></span>
                 </button>
-                <div><p class="identity-name">Zipped<span>.</span></p><p class="identity-handle">@zippedsz</p></div>
+                <div><p class="identity-name">Zipped</p><p class="identity-handle">@zippedsz</p></div>
             </div>
             <nav id="main-menu" aria-label="Navegação principal"></nav>
             <div class="sidebar-bottom">
                 <a id="now-playing" class="listening-card" href="https://www.last.fm/pt/user/Zippeed" target="_blank" rel="noopener noreferrer"></a>
                 <section id="system-status-container" class="system-status"></section>
-                <div class="sidebar-footer"><span><i class="status-dot"></i> <span id="connection-label">Online</span></span><span>v6.0</span></div>
+                <div class="sidebar-footer"><span><i class="status-dot"></i> <span id="connection-label">Online</span></span><span>G.U.N. v6.1</span></div>
             </div>
         </aside>
         <button id="mobile-overlay" class="mobile-overlay" aria-label="Fechar menu" hidden tabindex="-1"></button>
         <div class="workspace">
             <header class="topbar">
-                <div class="breadcrumb"><button id="mobile-menu-toggle" class="icon-button mobile-menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"></button><span class="breadcrumb-home" id="space-label">Espaço pessoal</span><span class="breadcrumb-divider">/</span><span id="section-label">Painel</span></div>
+                <div class="breadcrumb"><button id="mobile-menu-toggle" class="icon-button mobile-menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"></button><span class="breadcrumb-home" id="space-label">Espaço pessoal</span><span class="breadcrumb-divider">&gt;</span><span id="section-label">Painel</span></div>
                 <div class="topbar-controls">
                     <div id="lang-buttons" class="language-switch" role="group" aria-label="Idioma do site"></div>
                     <button id="effects-toggle" class="icon-button effects-toggle" aria-pressed="false" aria-label="Efeitos visuais"></button>
@@ -97,7 +99,7 @@
                 </div>
             </header>
             <main id="main-content">
-                <div id="content-window" tabindex="-1"></div>
+                <div class="terminal-window"><div class="window-chrome" aria-hidden="true"><span>G.U.N. DATABASE</span><span>PROJECT_SHADOW / PERSONAL_ARCHIVE</span></div><div id="content-window" tabindex="-1"></div></div>
                 <footer class="page-footer"><span id="footer-text">Feito para explorar no seu ritmo.</span><span>P<span class="brand-slashes">//</span>SHADOW</span></footer>
             </main>
         </div>

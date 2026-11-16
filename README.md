@@ -1,6 +1,6 @@
 # P//SHADOW — Zipped
 
-Site pessoal estático, responsivo e compatível com GitHub Pages. A identidade Shadow continua presente, com navegação acessível, quatro idiomas e player sob demanda.
+Site pessoal estático, responsivo e compatível com GitHub Pages. A identidade é um terminal G.U.N. inspirado em Shadow, com fontes originais hospedadas localmente, navegação acessível, quatro idiomas e player sob demanda. A direção visual está em `DESIGN.md`.
 
 ## Rodar localmente
 
@@ -20,6 +20,8 @@ npm run verify
 
 Executa as verificações de referências, sintaxe e traduções; os testes do player; e gera `dist/`. Publique **o conteúdo de `dist/`** na raiz do GitHub Pages. Também é possível dar dois cliques em `preparar-upload.bat`.
 
+A publicação atual usa a raiz de `main` no GitHub Pages; um push nessa branch aciona o deploy. `dist/` é um pacote alternativo para upload manual e não precisa ser commitado.
+
 Os comandos individuais são `npm run check`, `npm test` e `npm run build`. Para conferir o pacote: `node scripts/serve.js --dist`.
 
 ## Estrutura
@@ -32,6 +34,8 @@ Os comandos individuais são `npm run check`, `npm test` e `npm run build`. Para
 - `audio.js`: player com carregamento sob demanda, avanço automático, volume, mute e proteção contra eventos de faixas antigas.
 - `icons.js`: SVGs locais; sem fontes de ícones.
 - `styles.css`: CSS nativo com tokens, Grid, breakpoints e respeito a movimento reduzido.
+- `fonts/`: VT323 e Share Tech Mono locais, com licenças OFL.
+- `imagens/icons/`: ícones Font Awesome locais e sua licença.
 - `sw.js`: cache offline versionado; áudio e requisições parciais não entram no cache.
 - `tests/`: testes com o runner nativo do Node.
 
