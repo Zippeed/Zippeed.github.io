@@ -1,16 +1,17 @@
 {
-  "name": "zippeed-github-io",
-  "version": "1.0.0",
+  "name": "pshadow-terminal",
+  "version": "6.0.0",
   "private": true,
-  "description": "Site pessoal de Zipped — P//SHADOW G.U.N. Terminal.",
+  "type": "module",
+  "description": "Site pessoal de Zipped. JavaScript modular, CSS nativo e zero dependências de runtime.",
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --minify",
-    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o tailwind.css --watch",
+    "dev": "node scripts/serve.js",
+    "start": "node scripts/serve.js",
     "check": "node scripts/check-project.js",
-    "verify": "npm run build:css && npm run check",
-    "prepare:upload": "npm run verify && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-upload.ps1"
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.js",
+    "verify": "npm run check && npm test && npm run build",
+    "prepare:upload": "npm run verify"
   },
-  "devDependencies": {
-    "tailwindcss": "^3.4.19"
-  }
+  "engines": { "node": ">=22" }
 }

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P//SHADOW - G.U.N. Terminal</title>
 
     <!-- SEO -->
     <meta name="description" content="Site pessoal de Zipped — gamer, streamer e entusiasta de tecnologia do Brasil. Terminal de registros G.U.N. / Projeto Shadow.">
     <meta name="keywords" content="Zipped, Zippedsz, gamer, streamer, Twitch, portfolio, site pessoal">
     <meta name="author" content="Zipped">
-    <meta name="theme-color" content="#cc0000">
+    <meta name="theme-color" content="#e74b53">
     <link rel="canonical" href="https://zippeed.github.io/">
 
     <!-- Favicon & PWA -->
-    <link rel="icon" type="image/png" href="imagens/characters/black_arms_logo.png">
-    <link rel="apple-touch-icon" href="imagens/characters/black_arms_logo.png">
+    <link rel="icon" type="image/png" href="imagens/characters/icon-192.png">
+    <link rel="apple-touch-icon" href="imagens/characters/icon-192.png">
     <link rel="manifest" href="manifest.json">
 
     <!-- Open Graph / Social -->
@@ -29,22 +29,8 @@
     <meta name="twitter:description" content="Site pessoal de Zipped — gamer, streamer e entusiasta de tecnologia do Brasil.">
     <meta name="twitter:image" content="https://zippeed.github.io/imagens/characters/perfil.png">
 
-    <!-- Performance: preconnect para recursos externos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <!-- Tailwind CSS (compilado estaticamente — sem CDN em runtime) -->
-    <link rel="stylesheet" href="tailwind.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <!-- Preload imagem de perfil (LCP) -->
-    <link rel="preload" as="image" href="imagens/characters/perfil.png">
-
+    <link rel="preload" as="image" href="imagens/characters/perfil.webp">
     <link rel="stylesheet" href="styles.css">
-
     <!-- Dados estruturados (schema.org Person) -->
     <script type="application/ld+json">
     {
@@ -69,151 +55,66 @@
     </script>
 </head>
 <body>
-    <!-- CRT Overlay -->
-    <div class="pointer-events-none fixed inset-0 z-50 opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
-    
-    <!-- Matrix Rain Canvas -->
-    <canvas id="matrix-canvas" class="fixed inset-0 z-[-2] opacity-30 pointer-events-none"></canvas>
-
-
-
-    <!-- Top Right Controls (Audio & Language) -->
-    <div class="fixed top-4 right-4 z-40 flex flex-col sm:flex-row items-end sm:items-center gap-2 sm:gap-4">
-        <!-- Language Selector -->
-        <div id="lang-buttons" class="flex gap-1 bg-gray-900/80 border border-red-900/50 p-1 rounded-lg backdrop-blur-sm">
-            <!-- Botões de Idioma serão inseridos aqui -->
-        </div>
-
-                <!-- MUSIC PLAYER -->
-                <div id="music-player-container" class="mt-3 flex flex-col gap-2">
-                    <!-- Now Playing Display -->
-                    <div id="local-music-display" class="text-center mb-1">
-                        <div id="track-name-display" class="now-playing-idle">&#9472; AWAITING SIGNAL &#9472;</div>
-                    </div>
-
-                    <!-- Player Controls -->
-                    <div id="audio-controller" class="bg-gray-900/80 border border-red-900/50 p-2 rounded-lg flex flex-col gap-2 backdrop-blur-sm transition-all hover:border-red-500">
-                        <div class="flex items-center justify-between px-1">
-                            <div class="flex items-center gap-3">
-                                <button id="bgm-prev-btn" aria-label="Faixa anterior" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
-                                    <i class="fas fa-step-backward" aria-hidden="true"></i>
-                                </button>
-                                <button id="bgm-play-btn" aria-label="Tocar / pausar" class="text-red-500 hover:text-white transition-colors outline-none focus:outline-none w-5 flex justify-center">
-                                    <i class="fas fa-play" id="bgm-icon" aria-hidden="true"></i>
-                                </button>
-                                <button id="bgm-next-btn" aria-label="Próxima faixa" class="text-gray-500 hover:text-white transition-colors outline-none focus:outline-none">
-                                    <i class="fas fa-step-forward" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            
-                            <!-- Visualizer Bars -->
-                            <div id="audio-visualizer" class="flex items-end gap-[2px] h-3 opacity-0 transition-opacity">
-                                <div class="w-1 bg-red-500 h-1 bar-anim-1"></div>
-                                <div class="w-1 bg-red-500 h-2 bar-anim-2"></div>
-                                <div class="w-1 bg-red-500 h-1.5 bar-anim-3"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between gap-2 mt-1">
-                            <i class="fas fa-volume-down text-gray-600 text-xs"></i>
-                            <input type="range" id="bgm-vol-slider" aria-label="Volume da música" min="0" max="100" value="5" class="flex-grow h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer focus:outline-none accent-red-600">
-                            <span id="bgm-vol-display" class="text-xs text-gray-400 font-mono w-8 text-right">5%</span>
-                        </div>
-                    </div>
-                </div>
-    </div>
-
-    <!-- Dynamic General Background (Shadow Render on Right) -->
-    <div class="fixed bottom-0 right-[-5%] h-[85vh] opacity-[0.08] pointer-events-none z-[-1] transition-all duration-1000" id="dynamic-shadow-bg">
-        <img src="imagens/characters/shadow-render.png" alt="Shadow Background" class="h-full w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,0,0,0.5)] transition-opacity duration-500">
-    </div>
-
-    <!-- Shadow Logo Watermark -->
-    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none z-0 w-3/4 max-w-lg transition-all duration-1000" id="bg-watermark">
-        <img src="imagens/characters/shadow_logo.png" alt="Shadow Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,0,0,0.8)] animate-pulse-slow">
-    </div>
-
-    <!-- Easter Egg Overlay -->
-    <div id="easter-egg-overlay">
-        <p style="color:#550000; font-family:'Share Tech Mono',monospace; font-size:0.75rem; letter-spacing:0.2em;">UNAUTHORIZED SEQUENCE DETECTED — G.U.N. PROTOCOL OVERRIDE</p>
-        <p id="easter-main-text"></p>
-        <img id="easter-sub-logo" src="imagens/characters/shadow_logo2.png" style="width: 250px; opacity:0; transition:opacity 0.5s ease 0.8s; filter: drop-shadow(0 0 20px gold);" alt="Super Shadow">
-        <p id="easter-quote-text" style="color:#444; font-family:'Share Tech Mono',monospace; font-size:0.7rem; margin-top:16px; opacity:0; transition:opacity 0.5s ease 1.2s; max-width:420px; line-height:1.6;">
-            "I am the shadow that protects this world. I am the ultimate life form."<br>
-            <span style="color:#333;">— Click anywhere to close —</span>
-        </p>
-    </div>
-
-    <canvas id="particle-canvas"></canvas>
-
-    <!-- Conteúdo Principal -->
-    <div id="main-container" class="w-screen min-h-screen flex flex-col lg:flex-row font-mono relative z-10">
-        
-        <!-- Menu Mobile Toggle -->
-        <button id="mobile-menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false" class="lg:hidden fixed top-4 left-4 z-30 bg-gray-900/80 p-3 border border-red-800/50 text-red-500 hover:bg-red-500/20 transition-colors">
-            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
-        </button>
-        
-        <!-- Barra Lateral -->
-        <aside id="sidebar" class="w-full lg:w-1/4 lg:max-w-xs h-auto lg:h-screen ui-background border-b-2 lg:border-b-0 lg:border-r-2 border-red-900 p-4 flex flex-col flex-shrink-0 transform lg:transform-none transition-transform duration-300 lg:relative fixed top-0 left-0 z-20 lg:z-10 -translate-x-full lg:translate-x-0">
-            <div class="relative z-10 flex-grow flex flex-col overflow-y-auto pr-2 custom-scrollbar">
-                <div class="flex items-center gap-3 mb-4">
-                    <img id="black-arms-logo" src="imagens/characters/black_arms_logo.png" alt="Black Arms" class="w-8 h-8 filter drop-shadow-[0_0_5px_rgba(255,0,0,0.8)] mix-blend-screen cursor-pointer hover:scale-110 transition-transform">
-                    <h1 class="text-2xl sm:text-3xl text-red-500 font-bold text-glow glitch-text" data-text="P//SHADOW">P//SHADOW</h1>
-                </div>
-                
-                <div class="mb-4 text-center">
-                    <div class="profile-pic-wrapper inline-block mx-auto">
-                        <img id="profile-pic" src="imagens/characters/perfil.png" alt="Foto de Perfil de Zipped" class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 block border-2 border-red-900/50 object-cover" loading="eager" fetchpriority="high">
-                    </div>
-                </div>
-
-                <nav id="main-menu" class="flex flex-col gap-2">
-                    <!-- Botões do Menu serão inseridos aqui -->
-                </nav>
-
-                <!-- Now Playing -->
-                <div id="now-playing" class="mt-3">
-                    <div class="now-playing-idle">&#9472; AWAITING SIGNAL &#9472;</div>
-                </div>
-
-                <div id="system-status-container" class="flex-grow flex flex-col justify-end">
-                    <!-- Painel de Status será inserido aqui -->
-                </div>
+    <a id="skip-link" class="skip-link" href="#content-window">Pular para o conteúdo</a>
+    <div class="site-shell">
+        <aside id="sidebar" class="sidebar">
+            <a class="brand" href="#profile" aria-label="P//SHADOW — Zipped">
+                <img src="imagens/characters/black-arms.webp" width="32" height="40" alt="">
+                <span>P<span class="brand-slashes">//</span>SHADOW<small>G.U.N. personal terminal</small></span>
+            </a>
+            <div class="sidebar-identity">
+                <button id="profile-secret" class="avatar-button" aria-label="Zipped">
+                    <img src="imagens/characters/perfil.webp" alt="Zipped" width="88" height="88" fetchpriority="high">
+                    <span class="avatar-status" aria-hidden="true"></span>
+                </button>
+                <div><p class="identity-name">Zipped<span>.</span></p><p class="identity-handle">@zippedsz</p></div>
             </div>
-            
-            <div class="relative z-10 flex flex-col gap-2 border-t border-red-900/50 pt-2 mt-4 flex-shrink-0">
-                 <p class="text-xs text-center text-gray-600">G.U.N. TERMINAL V5.0.0</p>
-                 <p id="uptime-display" class="text-xs text-center text-red-700/80">UPTIME: 00:00:00</p>
+            <nav id="main-menu" aria-label="Navegação principal"></nav>
+            <div class="sidebar-bottom">
+                <a id="now-playing" class="listening-card" href="https://www.last.fm/pt/user/Zippeed" target="_blank" rel="noopener noreferrer"></a>
+                <section id="system-status-container" class="system-status"></section>
+                <div class="sidebar-footer"><span><i class="status-dot"></i> <span id="connection-label">Online</span></span><span>v6.0</span></div>
             </div>
         </aside>
-        
-        <!-- Overlay para mobile -->
-        <div id="mobile-overlay" class="lg:hidden fixed inset-0 bg-black/50 z-10 hidden"></div>
-        
-        <!-- Janela de Conteúdo -->
-        <main class="flex-1 w-full h-auto lg:h-screen p-4 sm:p-6 lg:p-8 overflow-y-auto relative">
-            <div id="content-window" class="relative z-10 w-full min-h-full">
-                <!-- Conteúdo da seção será inserido aqui -->
-            </div>
-        </main>
+        <button id="mobile-overlay" class="mobile-overlay" aria-label="Fechar menu" hidden tabindex="-1"></button>
+        <div class="workspace">
+            <header class="topbar">
+                <div class="breadcrumb"><button id="mobile-menu-toggle" class="icon-button mobile-menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"></button><span class="breadcrumb-home" id="space-label">Espaço pessoal</span><span class="breadcrumb-divider">/</span><span id="section-label">Painel</span></div>
+                <div class="topbar-controls">
+                    <div id="lang-buttons" class="language-switch" role="group" aria-label="Idioma do site"></div>
+                    <button id="effects-toggle" class="icon-button effects-toggle" aria-pressed="false" aria-label="Efeitos visuais"></button>
+                    <div class="player-anchor">
+                        <button id="player-toggle" class="player-toggle" aria-expanded="false" aria-controls="music-player-container"><span class="record-icon" aria-hidden="true"></span><span class="player-summary"><span id="track-name-display">Theme of Zipped</span><small id="track-state">Pausado</small></span><span id="player-toggle-icon"></span></button>
+                        <section id="music-player-container" class="music-player" hidden aria-label="Trilha sonora">
+                            <div class="player-panel-heading"><span id="soundtrack-label">Trilha sonora</span><span class="track-count" id="track-count">01 / 03</span></div>
+                            <p id="player-track-title">Theme of Zipped</p>
+                            <div class="transport"><button id="bgm-prev-btn" class="icon-button" aria-label="Faixa anterior"></button><button id="bgm-play-btn" class="icon-button play-button" aria-label="Reproduzir"></button><button id="bgm-next-btn" class="icon-button" aria-label="Próxima faixa"></button></div>
+                            <div class="seek-row"><span id="elapsed">0:00</span><input id="bgm-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posição da música" disabled><span id="duration">0:00</span></div>
+                            <div class="volume-row"><button id="bgm-mute-btn" class="icon-button" aria-label="Silenciar" aria-pressed="false"></button><input id="bgm-vol-slider" type="range" min="0" max="100" value="5" aria-label="Volume"><output id="bgm-vol-display" for="bgm-vol-slider">5%</output></div>
+                            <p id="audio-message" class="audio-message" role="status"></p>
+                        </section>
+                    </div>
+                </div>
+            </header>
+            <main id="main-content">
+                <div id="content-window" tabindex="-1"></div>
+                <footer class="page-footer"><span id="footer-text">Feito para explorar no seu ritmo.</span><span>P<span class="brand-slashes">//</span>SHADOW</span></footer>
+            </main>
+        </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="renderers.js"></script>
-    <script src="particles.js"></script>
-    <script src="matrix.js"></script>
-    <script src="app.js"></script>
-    <script src="easter-egg.js"></script>
-
-    <!-- Registro do Service Worker (offline / cache) -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').catch(() => {});
-            });
-        }
-    </script>
+    <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
+        <button id="lightbox-close" class="icon-button lightbox-close" aria-label="Fechar"></button>
+        <button id="lightbox-prev" class="icon-button lightbox-prev" aria-label="Imagem anterior"></button>
+        <figure><img id="lightbox-img" alt=""><figcaption id="lightbox-caption"></figcaption><p id="lightbox-error" role="status" hidden></p></figure>
+        <button id="lightbox-next" class="icon-button lightbox-next" aria-label="Próxima imagem"></button>
+        <span id="lightbox-count" class="lightbox-count"></span>
+    </dialog>
+    <dialog id="easter-egg-overlay" class="secret-dialog" aria-labelledby="easter-main-text">
+        <img src="imagens/characters/shadow_logo2.png" alt="Super Shadow" width="270" height="117" loading="lazy">
+        <h2 id="easter-main-text">Chaos… control!</h2><p id="secret-description"></p>
+        <button id="secret-close" class="primary-button">Voltar ao terminal</button>
+    </dialog>
+    <noscript><div class="noscript-message">Ative o JavaScript para explorar o terminal. <a href="https://github.com/Zippeed">GitHub</a> · <a href="https://www.twitch.tv/zippedsz">Twitch</a></div></noscript>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

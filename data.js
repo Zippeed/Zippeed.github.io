@@ -3,7 +3,7 @@
 // atualizam junto com o site e tambem podem ser armazenadas pelo service worker.
 const CDN_BASE = '.';
 
-const staticData = {
+export const staticData = {
     socials: [
         { name: "Twitch", user: "zippedsz", url: "https://www.twitch.tv/zippedsz", icon: "fab fa-twitch" },
         { name: "Twitter/X", user: "zippeed", url: "https://x.com/Zippeed", icon: "fab fa-x-twitter" },
@@ -19,14 +19,21 @@ const staticData = {
             { name: "Cyberpunk 2077", image: `${CDN_BASE}/imagens/games/cyberpunk.webp` },
             { name: "Life is Strange", image: `${CDN_BASE}/imagens/games/life-is-strange.webp` },
             { name: "OneShot", image: `${CDN_BASE}/imagens/games/oneshot.webp` },
-            { name: "Outer Wilds", image: `${CDN_BASE}/imagens/games/outer-wilds.webp` }
+            { name: "Outer Wilds", image: `${CDN_BASE}/imagens/games/outer-wilds.webp` },
+            { name: "Clair Obscur: Expedition 33", image: `${CDN_BASE}/imagens/games/expedition-33.webp` },
+            { name: "If Found...", image: `${CDN_BASE}/imagens/games/if-found.webp` },
+            { name: "What Remains of Edith Finch", image: `${CDN_BASE}/imagens/games/edith-finch.webp` },
+            { name: "Life is Strange 2", image: `${CDN_BASE}/imagens/games/life-is-strange-2.webp` },
+            { name: "Life is Strange: Before the Storm", image: `${CDN_BASE}/imagens/games/before-the-storm.webp` }
         ]},
         { icon: "fas fa-tv", items: [
             { name: "Arcane", image: `${CDN_BASE}/imagens/series/arcane.webp` },
             { name: "Hazbin Hotel", image: `${CDN_BASE}/imagens/series/hazbin-hotel.webp` },
             { name: "Helluva Boss", image: `${CDN_BASE}/imagens/series/helluva-boss.webp` },
             { name: "Rick and Morty", image: `${CDN_BASE}/imagens/series/rick-morty.webp` },
-            { name: "Smiling Friends", image: `${CDN_BASE}/imagens/series/smiling-friends.webp` }
+            { name: "Smiling Friends", image: `${CDN_BASE}/imagens/series/smiling-friends.webp` },
+            { name: "Dr. House", image: `${CDN_BASE}/imagens/series/house.webp` },
+            { name: "The Mentalist", image: `${CDN_BASE}/imagens/series/the-mentalist.webp` }
         ]},
         { icon: "fas fa-film", items: [
             { name: "Blade Runner 2049", image: `${CDN_BASE}/imagens/movies/blade-runner2049.webp` },
@@ -34,21 +41,25 @@ const staticData = {
             { name: "La La Land", image: `${CDN_BASE}/imagens/movies/la-la-land.webp` },
             { name: "The Batman", image: `${CDN_BASE}/imagens/movies/batman.webp` },
             { name: "Look Back", image: `${CDN_BASE}/imagens/movies/look-back.webp` },
-            { name: "The Wild Robot", image: `${CDN_BASE}/imagens/movies/wild-robot.webp` }
+            { name: "The Wild Robot", image: `${CDN_BASE}/imagens/movies/wild-robot.webp` },
+            { name: "The Perks of Being a Wallflower", image: `${CDN_BASE}/imagens/movies/perks-of-being-a-wallflower.webp` }
         ]},
         { icon: "fas fa-shield-halved", items: [
             { name: "Cyberpunk: Edgerunners", image: `${CDN_BASE}/imagens/animes/edgerunners.webp` },
             { name: "Cowboy Bebop", image: `${CDN_BASE}/imagens/animes/cowboy-bebop.webp` },
             { name: "JoJo's Bizarre Adventure", image: `${CDN_BASE}/imagens/animes/jojo.webp` },
             { name: "Monster", image: `${CDN_BASE}/imagens/animes/monster.webp` },
-            { name: "Beastars", image: `${CDN_BASE}/imagens/animes/beastars.webp` }
+            { name: "Beastars", image: `${CDN_BASE}/imagens/animes/beastars.webp` },
+            { name: "Mob Psycho 100", image: `${CDN_BASE}/imagens/animes/mob-psycho-100.webp` }
         ]},
         { icon: "fas fa-book-open", items: [
             { name: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/manga/bsd.webp` },
             { name: "Fire Force", image: `${CDN_BASE}/imagens/manga/fire-force.webp` },
             { name: "Soul Eater", image: `${CDN_BASE}/imagens/manga/soul-eater.webp` },
             { name: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/manga/tokyo-ghoul.webp` },
-            { name: "Goodnight Punpun", image: `${CDN_BASE}/imagens/manga/punpun.webp` }
+            { name: "Goodnight Punpun", image: `${CDN_BASE}/imagens/manga/punpun.webp` },
+            { name: "Tokyo Ghoul:re", image: `${CDN_BASE}/imagens/manga/tokyo-ghoul-re.webp` },
+            { name: "Monster", image: `${CDN_BASE}/imagens/manga/monster.webp` }
         ]},
         { icon: "fas fa-book", items: [
             { name: "Solo Leveling", image: `${CDN_BASE}/imagens/manhwa/solo-leveling.webp` },
@@ -62,7 +73,10 @@ const staticData = {
             { name: "Kaneki Ken", artist: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/characters/kaneki.webp` },
             { name: "Dazai Osamu", artist: "Bungou Stray Dogs", image: `${CDN_BASE}/imagens/characters/dazai.webp` },
             { name: "Moxxie", artist: "Helluva Boss", image: `${CDN_BASE}/imagens/characters/moxxie.webp` },
-            { name: "Death", artist: "DC (Sandman)", image: `${CDN_BASE}/imagens/characters/morte.webp` }
+            { name: "Death", artist: "DC (Sandman)", image: `${CDN_BASE}/imagens/characters/morte.webp` },
+            { name: "2B", artist: "NieR: Automata", image: `${CDN_BASE}/imagens/characters/2b.webp` },
+            { name: "Touka Kirishima", artist: "Tokyo Ghoul", image: `${CDN_BASE}/imagens/characters/touka.webp` },
+            { name: "Beatrix / Bunlith", artist: "It’s Bunlith! The Witch Upstairs", image: `${CDN_BASE}/imagens/characters/beatrix-bunlith.webp` }
         ]},
         { icon: "fas fa-music", items: [
             { name: "Die For You", artist: "Joji", image: `${CDN_BASE}/imagens/albums/DieForYou.webp` },
@@ -80,7 +94,11 @@ const staticData = {
             { name: "Reflection", artist: "The Neighbourhood", image: `${CDN_BASE}/imagens/albums/Reflection.webp` },
             { name: "Slow Dancing", artist: "Joji", image: `${CDN_BASE}/imagens/albums/SlowDancing.webp` },
             { name: "So Far Away", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/SoFarAway.webp` },
-            { name: "Teenagers", artist: "My Chemical Romance", image: `${CDN_BASE}/imagens/albums/Teenagers.webp` }
+            { name: "Teenagers", artist: "My Chemical Romance", image: `${CDN_BASE}/imagens/albums/Teenagers.webp` },
+            { name: "Fiction", artist: "Avenged Sevenfold", image: `${CDN_BASE}/imagens/albums/Fiction.webp` },
+            { name: "Asleep", artist: "The Smiths", image: `${CDN_BASE}/imagens/albums/Asleep.webp` },
+            { name: "Heroes", artist: "David Bowie", image: `${CDN_BASE}/imagens/albums/Heroes.webp` },
+            { name: "Could It Be Another Change", artist: "The Samples", image: `${CDN_BASE}/imagens/albums/CouldItBeAnotherChange.webp` }
         ]},
         { icon: "fas fa-headphones", items: [
             { 
@@ -141,7 +159,7 @@ const staticData = {
         { value: "NVIDIA GeForce RTX 3060 12GB ZOTAC", icon: "fas fa-gamepad" },
         { value: "2x8GB DDR4 3200MHz", icon: "fas fa-memory" },
         { value: "K86 Attack Shark", icon: "fas fa-keyboard" },
-        { value: "Delux M900 Pro", icon: "fas fa-mouse" },
+        { value: "Rapoo VT0 Air MAX", icon: "fas fa-mouse" },
         { value: "BASEUS GH02", icon: "fas fa-headset" },
         { value: "Fifine A6T", icon: "fas fa-microphone" },
         { value: "2x LG UltraGear 180Hz", icon: "fas fa-desktop" },
@@ -150,19 +168,23 @@ const staticData = {
 };
 
 // Dados de tradução
-const languageData = {
+export const languageData = {
     pt: {
         profile: {
             title: "Painel de Dados: Zipped",
             fields: [
-                { label: "Idade", value: "21 Anos", icon: "fa-birthday-cake" },
-                { label: "Gênero", value: "Gênero Fluido", icon: "fa-venus-mars" },
-                { label: "Sexualidade", value: "Pansexual", icon: "fa-heart" },
+                { label: "Idade", value: "22 Anos", icon: "fa-birthday-cake" },
+                { label: "Gênero", value: "Secret", icon: "fa-venus-mars" },
+                { label: "Sexualidade", value: "Secret", icon: "fa-heart" },
                 { label: "Localização", value: "Brasil", icon: "fa-map-marker-alt" }
             ],
             directive: {
                 label: "Diretiva Principal",
-                value: "Olá! Sou Zipped, amo tecnologias e jogos. Adoro conversar sobre qualquer coisa, atualmente estou estudando, trabalhando e jogando bem pouco mas se quiser jogar comigo é só me chamar."
+                value: "Olá! Sou Zipped, estudo Ciência da Computação e trabalho com DataOps. Amo tecnologia, jogos e boas histórias; meu jogo favorito é Cyberpunk 2077. Adoro conversar sobre qualquer coisa e descobrir novas músicas, filmes, mangás e manhwas. Entre os estudos e o trabalho, sobra pouco tempo para jogar, mas, se quiser jogar comigo ou só trocar uma ideia, é só me chamar."
+            },
+            quote: {
+                text: "Todos esses momentos se perderão no tempo, como lágrimas na chuva.",
+                attribution: "Roy Batty — Blade Runner (1982)"
             },
             socialsTitle: "Canais de Comunicação",
             featuredTitle: "Foco Atual",
@@ -235,14 +257,18 @@ const languageData = {
         profile: {
             title: "Data Dashboard: Zipped",
             fields: [
-                { label: "Age", value: "21 Years", icon: "fa-birthday-cake" },
-                { label: "Gender", value: "Genderfluid", icon: "fa-venus-mars" },
-                { label: "Sexuality", value: "Pansexual", icon: "fa-heart" },
+                { label: "Age", value: "22 Years", icon: "fa-birthday-cake" },
+                { label: "Gender", value: "Secret", icon: "fa-venus-mars" },
+                { label: "Sexuality", value: "Secret", icon: "fa-heart" },
                 { label: "Location", value: "Brazil", icon: "fa-map-marker-alt" }
             ],
             directive: {
                 label: "Main Directive",
-                value: "Hi! I'm Zipped, I love technology and games. I love to talk about anything, currently I'm studying, working and playing very little but if you want to play with me just call me."
+                value: "Hi! I'm Zipped, a Computer Science student working in DataOps. I love technology, games and good stories; my favorite game is Cyberpunk 2077. I enjoy talking about anything and discovering new music, movies, manga and manhwa. Between studying and working, I have little time to play, but if you want to join me for a game or just chat, feel free to reach out."
+            },
+            quote: {
+                text: "All those moments will be lost in time, like tears in rain.",
+                attribution: "Roy Batty — Blade Runner (1982)"
             },
             socialsTitle: "Communication Channels",
             featuredTitle: "Current Focus",
@@ -315,14 +341,18 @@ const languageData = {
         profile: {
             title: "Panel de Datos: Zipped",
             fields: [
-                { label: "Edad", value: "21 Años", icon: "fa-birthday-cake" },
-                { label: "Género", value: "Género Fluido", icon: "fa-venus-mars" },
-                { label: "Sexualidad", value: "Pansexual", icon: "fa-heart" },
+                { label: "Edad", value: "22 Años", icon: "fa-birthday-cake" },
+                { label: "Género", value: "Secret", icon: "fa-venus-mars" },
+                { label: "Sexualidad", value: "Secret", icon: "fa-heart" },
                 { label: "Ubicación", value: "Brasil", icon: "fa-map-marker-alt" }
             ],
             directive: {
                 label: "Directiva Principal",
-                value: "¡Hola! Soy Zipped, amo la tecnología y los juegos. Me encanta hablar de cualquier cosa, actualmente estoy estudiando, trabajando y jugando muy poco pero si quieres jugar conmigo solo llámame."
+                value: "¡Hola! Soy Zipped, estudio Ciencias de la Computación y trabajo en DataOps. Me encantan la tecnología, los videojuegos y las buenas historias; mi juego favorito es Cyberpunk 2077. Disfruto conversar de cualquier cosa y descubrir música, películas, mangas y manhwas. Entre los estudios y el trabajo me queda poco tiempo para jugar, pero, si quieres jugar conmigo o simplemente charlar, escríbeme."
+            },
+            quote: {
+                text: "Todos esos momentos se perderán en el tiempo, como lágrimas en la lluvia.",
+                attribution: "Roy Batty — Blade Runner (1982)"
             },
             socialsTitle: "Canales de Comunicación",
             featuredTitle: "Enfoque Actual",
@@ -406,14 +436,18 @@ const languageData = {
         profile: {
             title: "データダッシュボード: Zipped",
             fields: [
-                { label: "年齢", value: "21歳", icon: "fa-birthday-cake" },
-                { label: "性別", value: "ジェンダーフルイド", icon: "fa-venus-mars" },
-                { label: "セクシュアリティ", value: "パンセクシュアル", icon: "fa-heart" },
+                { label: "年齢", value: "22歳", icon: "fa-birthday-cake" },
+                { label: "性別", value: "Secret", icon: "fa-venus-mars" },
+                { label: "セクシュアリティ", value: "Secret", icon: "fa-heart" },
                 { label: "場所", value: "ブラジル", icon: "fa-map-marker-alt" }
             ],
             directive: {
                 label: "主な指令",
-                value: "こんにちは！Zippedです。テクノロジーとゲームが大好きです。何でも話すのが好きで、現在は勉強したり、働いたり、少しだけゲームをしたりしていますが、一緒に遊びたいなら声をかけてください。"
+                value: "こんにちは！Zippedです。大学でコンピュータサイエンスを学びながら、DataOpsの仕事をしています。テクノロジー、ゲーム、心に残る物語が大好きで、一番好きなゲームはCyberpunk 2077です。いろいろな話をしたり、新しい音楽や映画、マンガ、マンファに出会うのが好きです。勉強と仕事でゲームの時間は少なめですが、一緒に遊びたいときや話したいときは、気軽に声をかけてください。"
+            },
+            quote: {
+                text: "そうした瞬間はすべて、時の中に消えてしまう。雨の中の涙のように。",
+                attribution: "Roy Batty — Blade Runner (1982)"
             },
             socialsTitle: "通信チャネル",
             featuredTitle: "現在の焦点",
